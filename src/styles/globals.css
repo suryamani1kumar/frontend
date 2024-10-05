@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+:root {}
 
 body {
   color: var(--foreground);
@@ -20,8 +10,61 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+
+}
+
+.slide-hidden {
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  filter: drop-shadow(0px 0px 5px #555);
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.arrow-left {
+  left: 1rem;
+}
+
+.arrow-right {
+  right: 1rem;
+}
+
+.indicators {
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.indicator {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.indicator-inactive {
+  background-color: grey;
 }
