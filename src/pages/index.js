@@ -7,6 +7,7 @@ export default function Home() {
     <div>
       <GlobalAttractions />
       <Carousel data={TopDomesticAttractions} />
+      asdasdasdasdasasdasd
     </div>
   );
 }
