@@ -1,13 +1,13 @@
-import GlobalAttractions from '@/component/Attractions/GlobalAttractions';
-import { Carousel } from '@/component/Carousel';
-import { TopDomesticAttractions } from '@/service/homePage';
+import AttraCard from '@/components/common/AttraCard';
+import GlobalAttractions from '@/components/Homepage/Attractions/GlobalAttractions';
+import SearchSlider from '@/components/SearchSlider/SearchSlider';
 
 export default function Home() {
   return (
-    <div>
+    <>
+      <SearchSlider />
       <GlobalAttractions />
-      <Carousel data={TopDomesticAttractions} />
-      asdasdasdasdasasdasd
-    </div>
+      <AttraCard />
+    </>
   );
 }

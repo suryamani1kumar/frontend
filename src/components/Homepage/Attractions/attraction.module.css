@@ -1,0 +1,36 @@
+.attralistContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.attraCard {
+    position: relative;
+    width: 255px;
+    height: 150px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attraImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.attraImg:hover {
+    transform: scale(1.1);
+}
+
+
+.attname {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}

@@ -46,19 +46,19 @@ export const globalAttractions = [
       {
         name: 'Bangkok',
         imagePath: '/destination-img/paris.webp',
-        altName: 'araku-valley-beauty',
+        altName: 'bangkok.webp',
         url: '/attractions/bangkok',
       },
       {
         name: 'Kuala Lumpur',
-        imagePath: '/destination-img/paris.webp',
-        altName: 'araku-valley-beauty',
+        imagePath: '/destination-img/kuala-lumpur.webp',
+        altName: 'kuala-lumpur.webp',
         url: '/attractions/kuala-lumpur',
       },
       {
         name: 'Hanoi',
-        imagePath: '/destination-img/paris.webp',
-        altName: 'araku-valley-beauty',
+        imagePath: '/destination-img/hanoi.webp',
+        altName: 'hanoi.webp',
         url: '/attractions/hanoi',
       },
       {
