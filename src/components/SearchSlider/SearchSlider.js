@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import styles from './search.module.scss';
+import SearchBar from './SearchBar';
 const slides = [
   {
     city: 'Paris',
@@ -92,6 +93,7 @@ const SearchSlider = () => {
         )}
         onClick={() => changeSlides(1)}
       />
+      <SearchBar />
     </div>
   );
 };

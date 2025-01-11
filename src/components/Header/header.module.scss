@@ -1,0 +1,14 @@
+.header {
+  background: #fff;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
