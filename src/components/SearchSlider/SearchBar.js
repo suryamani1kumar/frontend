@@ -3,7 +3,11 @@ import React from 'react';
 const SearchBar = () => {
   return (
     <div>
-      <input />
+      <input
+        placeholder="emailid"
+        type="email"
+        style={{ border: '1px soild red' }}
+      />
     </div>
   );
 };
