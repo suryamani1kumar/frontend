@@ -1,13 +1,16 @@
 import React from 'react';
+import { IoSearch } from 'react-icons/io5';
+import styles from './search.module.scss';
 
 const SearchBar = () => {
   return (
-    <div>
-      <input
-        placeholder="emailid"
-        type="email"
-        style={{ border: '1px soild red' }}
-      />
+    <div className={styles.searchContainer}>
+      <div className={styles.searchInput}>
+        <IoSearch />
+        <input placeholder="Places to go, things to do ..." />
+      </div>
+
+      <button>Search</button>
     </div>
   );
 };

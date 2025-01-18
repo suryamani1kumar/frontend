@@ -51,49 +51,54 @@ const SearchSlider = () => {
     setPrevSlide(newPrevSlide);
   };
   return (
-    <div
-      className={classNames(styles.slider, { [styles.sready]: sliderReady })}
-    >
-      <div className={styles.slider_slides}>
-        {slides.map((slide, index) => (
-          <div
-            className={classNames(styles.sliderslide, {
-              [styles.s_active]: activeSlide === index,
-              [styles.s_prev]: prevSlide === index,
-            })}
-            key={slide.city}
-          >
-            <div className={styles.sliderslide_content}>
-              {' '}
-              <h2 className={styles.sliderslide_heading}>
-                {slide.city.split('').map((l, i) => (
-                  <span key={i}>{l}</span>
-                ))}{' '}
-              </h2>{' '}
-            </div>
-            <div className={styles.sliderslide_parts}>
-              {[...Array(IMAGE_PARTS).fill()].map((x, i) => (
-                <div className={styles.sliderslide_part} key={i}>
-                  {' '}
-                  <div
-                    className={styles.sliderslide_part_inner}
-                    style={{ backgroundImage: `url(${slide.img})` }}
-                  />{' '}
-                </div>
-              ))}{' '}
-            </div>{' '}
-          </div>
-        ))}{' '}
-      </div>
-      <div className={styles.slidercontrol} onClick={() => changeSlides(-1)} />{' '}
-      <div
-        className={classNames(
-          styles.slidercontrol,
-          styles.slider_control__right
-        )}
-        onClick={() => changeSlides(1)}
-      />
+    <div className={styles.searchSlidercontainer}>
       <SearchBar />
+      <div
+        className={classNames(styles.slider, { [styles.sready]: sliderReady })}
+      >
+        <div className={styles.slider_slides}>
+          {slides.map((slide, index) => (
+            <div
+              className={classNames(styles.sliderslide, {
+                [styles.s_active]: activeSlide === index,
+                [styles.s_prev]: prevSlide === index,
+              })}
+              key={slide.city}
+            >
+              <div className={styles.sliderslide_content}>
+                {' '}
+                <h2 className={styles.sliderslide_heading}>
+                  {slide.city.split('').map((l, i) => (
+                    <span key={i}>{l}</span>
+                  ))}{' '}
+                </h2>{' '}
+              </div>
+              <div className={styles.sliderslide_parts}>
+                {[...Array(IMAGE_PARTS).fill()].map((x, i) => (
+                  <div className={styles.sliderslide_part} key={i}>
+                    {' '}
+                    <div
+                      className={styles.sliderslide_part_inner}
+                      style={{ backgroundImage: `url(${slide.img})` }}
+                    />{' '}
+                  </div>
+                ))}{' '}
+              </div>{' '}
+            </div>
+          ))}{' '}
+        </div>
+        <div
+          className={styles.slidercontrol}
+          onClick={() => changeSlides(-1)}
+        />{' '}
+        <div
+          className={classNames(
+            styles.slidercontrol,
+            styles.slider_control__right
+          )}
+          onClick={() => changeSlides(1)}
+        />
+      </div>
     </div>
   );
 };

@@ -4,11 +4,10 @@ $stagger: 0.08s;
 $sliderReadyTrans: all $animTime/2 $animTime;
 $maxLettersStagger: 6;
 $letterStagger: 0.1s;
-
 .slider {
   overflow: hidden;
   position: relative;
-  height: 80vh;
+  height: 70vh;
   color: #fff;
 
   @mixin sliderReady {
@@ -242,6 +241,31 @@ $letterStagger: 0.1s;
     @include sliderReady {
       transform: translateX(0);
       opacity: 1;
+    }
+  }
+}
+.searchSlidercontainer {
+  position: relative;
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50px;
+    position: absolute;
+    width: 50%;
+    top: 40%;
+    left: 23%;
+    z-index: 1000;
+    background-color: #fff;
+    .searchInput {
+      display: flex;
+      align-items: center;
+      input {
+        width: 100%;
+      }
     }
   }
 }

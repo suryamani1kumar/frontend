@@ -1,13 +1,20 @@
-.header {
-  background: #fff;
+.headercontainer {
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 10px;
-}
+    padding: 10px;
 
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  width: 100%;
+  .header {
+    background: #fff;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    
+  }
 }
