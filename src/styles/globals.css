@@ -18,11 +18,10 @@ body {
 }
 
 .wrapper {
-    margin: 2rem;
+    margin: 2rem 0;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr;
-    justify-content: center;
 }
 
 .card {

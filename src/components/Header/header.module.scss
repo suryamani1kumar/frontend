@@ -1,17 +1,13 @@
-.headercontainer {
-  max-width: 1140px;
+.header {
+  margin: 0 auto;
+  padding: 10px;
+}
 
-  .header {
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
-    background: #f2f2f2;
-  }
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #f2f2f2;
 }

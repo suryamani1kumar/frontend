@@ -11,8 +11,9 @@ export default function Home() {
         <meta name="description" content="Triploom" />
         <meta name="keywords" content="Triploom" />
       </Head>
-      <div>
-        <SearchSlider />
+
+      <SearchSlider />
+      <div className="container">
         <AttraCard />
         <GlobalAttractions />
       </div>

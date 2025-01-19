@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const Header = () => {
   const sticky = useStickyHeader(40);
   return (
-    <div className={styles.headercontainer}>
+    <div className={'container'}>
       <div className={classNames(styles.header, { [styles.sticky]: sticky })}>
         Triploom
       </div>
