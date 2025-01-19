@@ -11,7 +11,7 @@ export default function GlobalAttractions() {
     setValue(newValue);
   };
   return (
-    <div>
+    <div className="container">
       <Tabs
         value={value}
         onChange={handleChange}

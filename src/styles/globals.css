@@ -6,6 +6,17 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #f2f2f2;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 .wrapper {
     margin: 2rem;
     display: grid;
@@ -16,57 +27,84 @@
 
 .card {
     box-shadow: 0 0 10px 5px #e1e5ee;
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
     min-width: 28rem;
     display: flex;
+    overflow: hidden;
 }
 
 .card__img {
-    width: 14rem;
+    width: 100%;
     height: 11rem;
     object-fit: cover;
 }
 
 .card__body {
-    margin: 1rem;
+    padding: .8rem;
     flex-grow: 1;
+    background: #fff;
 }
 
 .card__title {
     line-height: 1.4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: #580000;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: left;
 }
 
 .card__description {
     line-height: 1.2rem;
+    color: #333;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
 }
 
-.card__price {
-    font-size: 1.4rem;
-    margin-top: 0.6rem;
-}
-
-.card__btn {
-    border: none;
+.card_read {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
     border-top: 1px solid #e1e5ee;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: bold;
-    color: inherit;
-    width: 100%;
-    padding-top: 1rem;
-    margin-top: 1rem;
-    cursor: pointer;
+    padding-top: .5rem;
+
 }
 
-.card__price::before {
-    content: "$";
-    font-size: 1rem;
-    position: relative;
-    top: -0.3rem;
-    padding-right: 0.1rem;
+.card_releaseDate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.card_releaseDate svg {
+    margin-right: .2rem;
+}
+
+.readMore {
+    color: #580000;
+    text-decoration: none;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.readMore:hover {
+    color: #7a0000;
+}
+
+.readMore::after {
+    content: '→';
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.readMore:hover::after {
+    transform: translateX(5px);
+}
+
+
 
 @media screen and (min-width: 600px) {
     .wrapper {
@@ -79,8 +117,5 @@
         min-width: 14rem;
     }
 
-    .card__img {
-        width: 100%;
-        height: 12rem;
-    }
+
 }
