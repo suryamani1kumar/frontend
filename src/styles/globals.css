@@ -40,11 +40,13 @@ max-width:1140px;
 .card {
     box-shadow: 0 0 10px 5px #e1e5ee;
     border-radius: 0.5rem;
-    min-width: 28rem;
+    min-width: 18rem;
     /* width: 400px; */
     display: flex;
     overflow: hidden;
     margin-right: 1rem;
+    min-height: 23rem;
+    height: 23rem;
 }
 
 .card__img {
