@@ -87,7 +87,7 @@ const SearchSlider = () => {
             </div>
           ))}{' '}
         </div>
-        <div
+        {/* <div
           className={styles.slidercontrol}
           onClick={() => changeSlides(-1)}
         />{' '}
@@ -97,7 +97,7 @@ const SearchSlider = () => {
             styles.slider_control__right
           )}
           onClick={() => changeSlides(1)}
-        />
+        /> */}
       </div>
     </div>
   );
