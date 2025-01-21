@@ -120,7 +120,7 @@ max-width:1140px;
 
 
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
     .wrapper {
         grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
     }
@@ -132,4 +132,4 @@ max-width:1140px;
     }
 
 
-}
+} */
