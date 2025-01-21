@@ -47,6 +47,7 @@ max-width:1140px;
     margin-right: 1rem;
     min-height: 23rem;
     height: 23rem;
+    flex-direction: column;
 }
 
 .card__img {
