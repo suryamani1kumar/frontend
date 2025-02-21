@@ -64,6 +64,9 @@ const AttraCard = () => {
             </div>
           ))}
       </div>
+  <button className="carousel-button">
+        <span className="arrow">&#x276F;</span>
+      </button>
     </div>
   );
 };
