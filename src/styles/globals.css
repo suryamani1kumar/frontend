@@ -14,7 +14,7 @@ body {
 }
 
 .container {
-
+max-width:1140px;
     margin: 0 auto;
 }
 
@@ -36,11 +36,14 @@ body {
 .card {
     box-shadow: 0 0 10px 5px #e1e5ee;
     border-radius: 0.5rem;
-    min-width: 28rem;
+    min-width: 18rem;
     /* width: 400px; */
     display: flex;
     overflow: hidden;
     margin-right: 1rem;
+    min-height: 23rem;
+    height: 23rem;
+    flex-direction: column;
 }
 
 .card__img {
@@ -116,7 +119,7 @@ body {
 
 
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
     .wrapper {
         grid-template-columns: repeat(auto-fit, minmax(14rem, 16rem));
     }
@@ -128,4 +131,4 @@ body {
     }
 
 
-}
+} */
