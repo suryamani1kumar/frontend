@@ -52,7 +52,7 @@ const SearchSlider = () => {
   };
   return (
     <div className={styles.searchSlidercontainer}>
-      // <SearchBar />
+      <SearchBar />
       <div
         className={classNames(styles.slider, { [styles.sready]: sliderReady })}
       >
