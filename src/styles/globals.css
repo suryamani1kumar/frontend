@@ -117,7 +117,29 @@ max-width:1140px;
     transform: translateX(5px);
 }
 
+.carousel-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.carousel-button .arrow {
+  font-size: 24px;
+  color: black;
+}
+
+.carousel-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
 
 /* @media screen and (min-width: 600px) {
     .wrapper {
