@@ -30,11 +30,7 @@ body {
     display: flex;
     height: 100%;
     width: 400px;
-    /* width: max-content; */
 
-    /* display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr; */
 }
 
 .card {
