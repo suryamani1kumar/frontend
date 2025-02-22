@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import styles from './search.module.scss';
-import SearchBar from './SearchBar';
+// import SearchBar from './SearchBar';
 const slides = [
   {
     city: 'Paris',
@@ -52,7 +52,7 @@ const SearchSlider = () => {
   };
   return (
     <div className={styles.searchSlidercontainer}>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div
         className={classNames(styles.slider, { [styles.sready]: sliderReady })}
       >
