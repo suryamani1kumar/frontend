@@ -4,36 +4,26 @@ import React, { useRef, useState } from 'react';
 import { CiCalendar } from 'react-icons/ci';
 
 const AttraCard = () => {
-  const [startX, setStartX] = useState(0);
-  const [isMouseDown, setIsMouseDown] = useState(false);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const swiperRef = useRef(null);
-  const handleOnMouseDown = (e) => {
-    setIsMouseDown(true);
-    setStartX(e.clientX);
+  const handleprevButton = () => {
+    const card = swiperRef.current;
+    console.log('card', card);
+    if (card) {
+      const width = card.clientWidth;
+      card.scrollLeft -= width;
+    }
   };
-  const handleOnMouseMove = (e) => {
-    if (!isMouseDown || !swiperRef.current) return;
-    e.preventDefault();
-    const deltax = (e.clientX - startX) * 0.115;
-    swiperRef.current.scrollLeft = scrollLeft - deltax;
-  };
-  const handleOnMouseUp = (e) => {
-    setIsMouseDown(false);
-  };
-  const handleOnScroll = () => {
-    setScrollLeft(swiperRef.current.scrollLeft);
+  const handlenextButton = () => {
+    const card = swiperRef.current;
+    console.log('card', card);
+    if (card) {
+      const width = card.clientWidth;
+      card.scrollLeft += width;
+    }
   };
   return (
     <div className="relative">
-      <div
-        className="swiperRootContainer"
-        onMouseMove={handleOnMouseMove}
-        onMouseDown={handleOnMouseDown}
-        onMouseUp={handleOnMouseUp}
-        onScroll={handleOnScroll}
-        ref={swiperRef}
-      >
+      <div className="swiperRootContainer" ref={swiperRef}>
         <div className="wrapper">
           {/* https://github.com/virajj014/productslider-react */}
           {Array(9)
@@ -48,7 +38,7 @@ const AttraCard = () => {
                   height={0}
                 />
                 <div className="card__body">
-                  <h2 className="card__title">Kuala Lumpur</h2>
+                  <h2 className="card__title">Kuala Lumpur {i}</h2>
                   <p className="card__description">
                     the towering Petronas Twin Towers to the historic temples
                     and delicious street food ...
@@ -66,11 +56,17 @@ const AttraCard = () => {
             ))}
         </div>
       </div>
-      <button className="carousel-button right-carousel-button">
-        <span className="arrow">&#x276F;</span>
-      </button>
-      <button className="carousel-button left-carousel-button">
+      <button
+        className="carousel-button left-carousel-button"
+        onClick={handleprevButton}
+      >
         <span className="arrow">&#x276E;</span>
+      </button>
+      <button
+        className="carousel-button right-carousel-button"
+        onClick={handlenextButton}
+      >
+        <span className="arrow">&#x276F;</span>
       </button>
     </div>
   );
