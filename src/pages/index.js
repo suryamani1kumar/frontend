@@ -14,7 +14,7 @@ export default function Home() {
 
       <SearchSlider />
       <div className="container">
-        <h1>Explore more destinations </h1>
+        <h1>Explore more destinations in India</h1>
         <AttraCard />
         <h1>Explore more destinations around the world</h1>
         <AttraCard />

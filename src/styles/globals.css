@@ -29,7 +29,6 @@ body {
     margin: 2rem 0;
     display: flex;
     height: 100%;
-    width: 400px;
 
 }
 
@@ -127,15 +126,15 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: absolute;
+    top: 45%;
 }
 
 .right-carousel-button {
-
-    right: 20px;
+    right: -15px;
 }
 
 .left-carousel-button {
-    left: 15px;
+    left: -20px;
 }
 
 .carousel-button .arrow {
@@ -144,6 +143,6 @@ body {
 }
 
 .carousel-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
