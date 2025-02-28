@@ -18,6 +18,12 @@ body {
     margin: 0 auto;
 }
 
+.cardHeading {
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
 .swiperRootContainer {
     width: 100%;
     overflow: hidden;
@@ -26,7 +32,7 @@ body {
 }
 
 .wrapper {
-    margin: 2rem 0;
+    margin: 1.3rem 0;
     display: flex;
     height: 100%;
 
