@@ -83,6 +83,7 @@ const Data = [
   },
 ];
 const AttraCard = (props) => {
+    const { heading } = props;
   const [activeIndex, setActiveIndex] = useState(0);
     const tabsContainerRef = useRef(null);
     let isDown = false;
@@ -163,13 +164,13 @@ const AttraCard = (props) => {
       </div>
       <button
         className="carousel-button left-carousel-button"
-        onClick={handleprevButton}
+        onClick={handlePrevButton}
       >
         <span className="arrow">&#x276E;</span>
       </button>
       <button
         className="carousel-button right-carousel-button"
-        onClick={handlenextButton}
+        onClick={handleNextButton}
       >
         <span className="arrow">&#x276F;</span>
       </button>
