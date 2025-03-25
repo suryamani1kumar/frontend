@@ -83,26 +83,57 @@ const Data = [
   },
 ];
 const AttraCard = (props) => {
-  const { heading } = props;
-  const swiperRef = useRef(null);
-  const handleprevButton = () => {
-    const card = swiperRef.current;
-    if (card) {
-      const width = card.clientWidth;
-      card.scrollLeft -= width;
-    }
-  };
-  const handlenextButton = () => {
-    const card = swiperRef.current;
-    if (card) {
-      const width = card.clientWidth;
-      card.scrollLeft += width;
-    }
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
+    const tabsContainerRef = useRef(null);
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const handleTabClick = (index) => {
+        setActiveIndex(index);
+    };
+
+    const handleMouseDown = (e) => {
+        isDown = true;
+        startX = e.pageX - tabsContainerRef.current.offsetLeft;
+        scrollLeft = tabsContainerRef.current.scrollLeft;
+    };
+
+    const handleMouseLeaveOrUp = () => {
+        isDown = false;
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - tabsContainerRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        tabsContainerRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handlePrevButton = () => {
+        const card = tabsContainerRef.current;
+        if (card) {
+            const width = card.clientWidth;
+            card.scrollLeft -= width;
+        }
+    };
+
+    const handleNextButton = () => {
+        const card = tabsContainerRef.current;
+        if (card) {
+            const width = card.clientWidth;
+            card.scrollLeft += width;
+        }
+    };
   return (
     <div className="relative">
       <h2 className="cardHeading">{heading}</h2>
-      <div className="swiperRootContainer" ref={swiperRef}>
+      <div className="swiperRootContainer" ref={tabsContainerRef}
+                onMouseDown={handleMouseDown}
+                onMouseLeave={handleMouseLeaveOrUp}
+                onMouseUp={handleMouseLeaveOrUp}
+                onMouseMove={handleMouseMove}>
         <div className="wrapper">
           {/* https://www.travelogyindia.com/ */}
           {Data.map((item, i) => (
