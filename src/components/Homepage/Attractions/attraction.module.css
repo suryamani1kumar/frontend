@@ -1,14 +1,16 @@
+.attractabHeader {
+    border-bottom: 1px solid #ddd !important;
+    margin-bottom: 15px !important;
+}
+
 .attralistContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
 }
 
 .attraCard {
     position: relative;
-    width: 230px;
-    height: 130px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
