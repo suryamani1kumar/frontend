@@ -21,6 +21,7 @@ body {
 .carousel-container {
   position: relative;
 }
+
 .cardHeading {
   font-size: 24px;
   font-weight: bold;
@@ -33,12 +34,13 @@ body {
   scroll-behavior: smooth;
   gap: 20px;
   padding: 10px;
-  scrollbar-width: none; /* Hide scrollbar */
+  /* Hide scrollbar */
   white-space: nowrap;
 }
 
 .swiperRootContainer::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Webkit browsers */
+  display: none;
+  /* Hide scrollbar for Webkit browsers */
 }
 
 .wrapper {
@@ -55,6 +57,14 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   margin: 10px;
+}
+
+.card:first-child {
+  margin-left: 0;
+}
+
+.card:last-child {
+  margin-right: 0;
 }
 
 .card:hover {
@@ -94,6 +104,15 @@ body {
   color: red;
   cursor: pointer;
   font-weight: bold;
+}
+
+.card_releaseDate {
+  display: flex;
+  align-items: center;
+}
+
+.card_releaseDate svg {
+  margin-right: 5px;
 }
 
 .carousel-button {

@@ -1,3 +1,4 @@
+import { useDeviceType } from '@/hooks/useDevicetype';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useRef, useState } from 'react';
@@ -83,58 +84,63 @@ const Data = [
   },
 ];
 const AttraCard = (props) => {
-    const { heading } = props;
+  const { heading } = props;
+  const device = useDeviceType();
   const [activeIndex, setActiveIndex] = useState(0);
-    const tabsContainerRef = useRef(null);
-    let isDown = false;
-    let startX;
-    let scrollLeft;
 
-    const handleTabClick = (index) => {
-        setActiveIndex(index);
-    };
+  const tabsContainerRef = useRef(null);
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-    const handleMouseDown = (e) => {
-        isDown = true;
-        startX = e.pageX - tabsContainerRef.current.offsetLeft;
-        scrollLeft = tabsContainerRef.current.scrollLeft;
-    };
+  const handleTabClick = (index) => {
+    setActiveIndex(index);
+  };
 
-    const handleMouseLeaveOrUp = () => {
-        isDown = false;
-    };
+  const handleMouseDown = (e) => {
+    isDown = true;
+    startX = e.pageX - tabsContainerRef.current.offsetLeft;
+    scrollLeft = tabsContainerRef.current.scrollLeft;
+  };
 
-    const handleMouseMove = (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - tabsContainerRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        tabsContainerRef.current.scrollLeft = scrollLeft - walk;
-    };
+  const handleMouseLeaveOrUp = () => {
+    isDown = false;
+  };
 
-    const handlePrevButton = () => {
-        const card = tabsContainerRef.current;
-        if (card) {
-            const width = card.clientWidth;
-            card.scrollLeft -= width;
-        }
-    };
+  const handleMouseMove = (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - tabsContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    tabsContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
 
-    const handleNextButton = () => {
-        const card = tabsContainerRef.current;
-        if (card) {
-            const width = card.clientWidth;
-            card.scrollLeft += width;
-        }
-    };
+  const handlePrevButton = () => {
+    const card = tabsContainerRef.current;
+    if (card) {
+      const width = card.clientWidth;
+      card.scrollLeft -= width;
+    }
+  };
+
+  const handleNextButton = () => {
+    const card = tabsContainerRef.current;
+    if (card) {
+      const width = card.clientWidth;
+      card.scrollLeft += width;
+    }
+  };
   return (
     <div className="relative">
       <h2 className="cardHeading">{heading}</h2>
-      <div className="swiperRootContainer" ref={tabsContainerRef}
-                onMouseDown={handleMouseDown}
-                onMouseLeave={handleMouseLeaveOrUp}
-                onMouseUp={handleMouseLeaveOrUp}
-                onMouseMove={handleMouseMove}>
+      <div
+        className="swiperRootContainer"
+        ref={tabsContainerRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeaveOrUp}
+        onMouseUp={handleMouseLeaveOrUp}
+        onMouseMove={handleMouseMove}
+      >
         <div className="wrapper">
           {/* https://www.travelogyindia.com/ */}
           {Data.map((item, i) => (
@@ -162,18 +168,22 @@ const AttraCard = (props) => {
           ))}
         </div>
       </div>
-      <button
-        className="carousel-button left-carousel-button"
-        onClick={handlePrevButton}
-      >
-        <span className="arrow">&#x276E;</span>
-      </button>
-      <button
-        className="carousel-button right-carousel-button"
-        onClick={handleNextButton}
-      >
-        <span className="arrow">&#x276F;</span>
-      </button>
+      {device !== 'Mobile' && (
+        <>
+          <button
+            className="carousel-button left-carousel-button"
+            onClick={handlePrevButton}
+          >
+            <span className="arrow">&#x276E;</span>
+          </button>
+          <button
+            className="carousel-button right-carousel-button"
+            onClick={handleNextButton}
+          >
+            <span className="arrow">&#x276F;</span>
+          </button>
+        </>
+      )}
     </div>
   );
 };
