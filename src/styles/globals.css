@@ -17,7 +17,11 @@ body {
   margin: 0 auto;
   padding: 10px;
 }
-
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .carousel-container {
   position: relative;
 }
