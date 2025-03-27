@@ -1,6 +1,6 @@
 import AttraCard from '@/components/common/AttraCard';
 import GlobalAttractions from '@/components/Homepage/Attractions/GlobalAttractions';
-import SearchSlider from '@/components/SearchSlider/SearchSlider';
+import SearchBar from '@/components/Search/SearchBar';
 import Head from 'next/head';
 
 export default function Home() {
@@ -12,8 +12,8 @@ export default function Home() {
         <meta name="keywords" content="Triploom" />
       </Head>
 
-      <SearchSlider />
-      <div className="container">
+      <div className="container overallMar">
+        <SearchBar />
         <AttraCard heading="Explore more destinations in India" />
         <AttraCard heading="Explore more destinations around the world" />
         <GlobalAttractions />

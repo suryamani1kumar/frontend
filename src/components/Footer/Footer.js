@@ -1,23 +1,30 @@
 import React from 'react';
 import styles from './footer.module.scss';
 import Link from 'next/link';
+import classNames from 'classnames';
+import { useDeviceType } from '@/hooks/useDevicetype';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const device = useDeviceType();
   return (
-    <>
+    <footer>
       <div className={styles.FooterMainContainer}>
-        <div className="container flex items-center flex-wrap">
-          <div className="w-1/3">
-            <p>Company</p>
+        <div className={classNames('container')}>
+          {device === 'Desktop' && (
+            <div className={classNames(styles.footer)}>
+              <p>Company</p>
+              <p>Support</p>
+              <p>Policies & Terms</p>
+            </div>
+          )}
+          <div className={classNames(styles.footer)}>
             <ul>
               <li>
                 <Link href={'/about-us'}>About Us</Link>
               </li>
             </ul>
-          </div>
-          <div className="w-1/3">
-            <p>Support</p>
+
             <ul>
               <li>
                 <Link href={'/contact-us'}>Contact Us</Link>
@@ -26,9 +33,7 @@ const Footer = () => {
                 <Link href={'/blog'}>Blog</Link>
               </li>
             </ul>
-          </div>
-          <div className="w-1/3">
-            <p>Policies & Terms</p>
+
             <ul>
               <li>
                 <Link href={'/privacy-policy'}>Privacy Policy</Link>
@@ -43,7 +48,7 @@ const Footer = () => {
       <div className={'text-center'}>
         Copyright © {currentYear} Triploom. All rights reserved
       </div>
-    </>
+    </footer>
   );
 };
 

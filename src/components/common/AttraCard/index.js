@@ -4,85 +4,17 @@ import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { CiCalendar } from 'react-icons/ci';
 
-const Data = [
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-  {
-    content:
-      'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
-    metaTitle: '',
-    metaDescription: '',
-    metaKeyword: '',
-    pageUrl: '/blog/best-places-in-india',
-    heading: 'Top Places to visit in India',
-    category: '',
-    status: '',
-  },
-];
+const Data = {
+  content:
+    'the towering Petronas Twin Towers to the historic temples and delicious street food ...',
+  metaTitle: '',
+  metaDescription: '',
+  metaKeyword: '',
+  pageUrl: '/blog/best-places-in-india',
+  heading: 'Top Places to visit in India',
+  category: '',
+  status: '',
+};
 const AttraCard = (props) => {
   const { heading } = props;
   const device = useDeviceType();
@@ -142,30 +74,33 @@ const AttraCard = (props) => {
         onMouseMove={handleMouseMove}
       >
         <div className="wrapper">
-          {/* https://www.travelogyindia.com/ */}
-          {Data.map((item, i) => (
-            <div className="card" key={i}>
-              <Link href={item.pageUrl}>
-                <Image
-                  src="/destination-img/kuala-lumpur.webp"
-                  className="card__img"
-                  alt="kuala-lumpur"
-                  width={0}
-                  height={0}
-                />
-                <div className="card__body">
-                  <h2 className="card__title">{item.heading}</h2>
-                  <p className="card__description">{item.content}</p>
-                  <div className="card_read">
-                    <p className="readMore">Read Article</p>
-                    <p className="card_releaseDate">
-                      <CiCalendar /> Aug 21
-                    </p>
+          {Array(10)
+            .fill({ ...Data })
+            .map((item, i) => (
+              <div className="card" key={i}>
+                <Link href={item.pageUrl}>
+                  <Image
+                    src="/destination-img/kuala-lumpur.webp"
+                    className="card__img"
+                    alt="kuala-lumpur"
+                    width={0}
+                    height={0}
+                  />
+                  <div className="card__body">
+                    <h2 className="card__title">
+                      {item.heading}-{i}
+                    </h2>
+                    <p className="card__description">{item.content}</p>
+                    <div className="card_read">
+                      <p className="readMore">Read Article</p>
+                      <p className="card_releaseDate">
+                        <CiCalendar /> Aug 21
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          ))}
+                </Link>
+              </div>
+            ))}
         </div>
       </div>
       {device !== 'Mobile' && (

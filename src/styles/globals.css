@@ -15,13 +15,19 @@ body {
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 13px;
 }
+
 .flexcontainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+.overallMar {
+  margin-top: 50px;
+}
+
 .carousel-container {
   position: relative;
 }
@@ -37,8 +43,6 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 20px;
-  padding: 10px;
-  /* Hide scrollbar */
   white-space: nowrap;
 }
 
