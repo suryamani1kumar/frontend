@@ -18,8 +18,8 @@ export default function GlobalAttractions() {
         variant="scrollable"
         className="attractabHeader"
           style={{
-    borderBottom: "1px solid #ddd" ;
-    marginBottom: "15px" ;
+    borderBottom: "1px solid #ddd" ,
+    marginBottom: "15px" 
 }}
       >
         {globalAttractions.map((Destname, i) => (
