@@ -17,6 +17,10 @@ export default function GlobalAttractions() {
         onChange={handleChange}
         variant="scrollable"
         className="attractabHeader"
+          style={{
+    borderBottom: "1px solid #ddd" ;
+    marginBottom: "15px" ;
+}}
       >
         {globalAttractions.map((Destname, i) => (
           <Tab label={Destname.name} key={i} className="normal-case" />
