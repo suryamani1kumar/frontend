@@ -13,7 +13,14 @@ export default function Home() {
       </Head>
 
       <div className="container overallMar">
-        <SearchBar />
+        <div>
+          <h1>
+            Adventure, excitement, and unforgettable experiences—all in one
+            place!
+          </h1>
+          <SearchBar />
+        </div>
+
         <AttraCard heading="Explore more destinations in India" />
         <AttraCard heading="Explore more destinations around the world" />
         <GlobalAttractions />

@@ -11,16 +11,16 @@ export default function GlobalAttractions() {
     setValue(newValue);
   };
   return (
-    <div>
+    <>
       <Tabs
         value={value}
         onChange={handleChange}
         variant="scrollable"
         className="attractabHeader"
-          style={{
-    borderBottom: "1px solid #ddd" ,
-    marginBottom: "15px" 
-}}
+        style={{
+          borderBottom: '1px solid #ddd',
+          margin: '15px 0',
+        }}
       >
         {globalAttractions.map((Destname, i) => (
           <Tab label={Destname.name} key={i} className="normal-case" />
@@ -47,6 +47,6 @@ export default function GlobalAttractions() {
             </ul>
           )
       )}
-    </div>
+    </>
   );
 }
