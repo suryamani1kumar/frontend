@@ -48,9 +48,36 @@ const Header = () => {
       </div>
       {openDrawer && (
         <Drawer open={openDrawer} onClose={toggleDrawer}>
-          <ul>
-            <li>Hello world</li>
-          </ul>
+          <div className={styles.menu_container}>
+            <div className={styles.menu_header}>
+              <Link href={"/"}>
+                <Image
+                  src="https://dummyimage.com/130x40/878487/fff"
+                  height={40}
+                  width={130}
+                  alt="logo"
+                />
+              </Link>
+              <span className={styles.close_btn}>&times;</span>
+            </div>
+            <ul className={styles.menu_list}>
+              <li className={styles.menu_item}>
+                <i>✈️</i> Flights
+              </li>
+              <li className={styles.menu_item}>
+                <i>🏨</i> Hotels
+              </li>
+              <li className={styles.menu_item}>
+                <i>🏖️</i> Vacation
+              </li>
+              <li className={styles.menu_item}>
+                <i>🚗</i> Car Rental
+              </li>
+              <li className={styles.menu_item}>
+                <i>🔗</i> Transfers
+              </li>
+            </ul>
+          </div>
         </Drawer>
       )}
     </header>
