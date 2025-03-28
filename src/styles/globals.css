@@ -8,6 +8,7 @@
   margin: 0;
 }
 
+/* 1. Mobile (320px -767px) */
 body {
   background: #f2f2f2;
 }
@@ -28,148 +29,8 @@ body {
   margin-top: 50px;
 }
 
-.carousel-container {
-  position: relative;
-}
-
-.cardHeading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.swiperRootContainer {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 20px;
-}
-
-.swiperRootContainer::-webkit-scrollbar {
-  display: none;
-  /* Hide scrollbar for Webkit browsers */
-}
-
-.wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.card {
-  flex: 0 0 auto;
-  width: 250px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-  margin: 10px;
-}
-
-.card:first-child {
-  margin-left: 0;
-}
-
-.card:last-child {
-  margin-right: 0;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card__img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.card__body {
-  padding: 15px;
-}
-
-.card__title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.card__description {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.card_read {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-}
-
-.readMore {
-  color: red;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.card_releaseDate {
-  display: flex;
-  align-items: center;
-}
-
-.card_releaseDate svg {
-  margin-right: 5px;
-}
-
-.carousel-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: absolute;
-  top: 45%;
-}
-
-.right-carousel-button {
-  right: -15px;
-}
-
-.left-carousel-button {
-  left: -20px;
-}
-
-.carousel-button .arrow {
-  font-size: 24px;
-  color: black;
-}
-
-.carousel-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
 /* 2. Tablet (768px - 1024px) */
-@media screen and (min-width: 768px) {
-  .card {
-    width: 270px;
-  }
-
-  .card__img {
-    height: 175px;
-  }
-}
+@media screen and (min-width: 768px) {}
 
 /* 3. Laptop & Desktop (1025px and above) */
-@media screen and (min-width: 1025px) {
-  .card {
-    width: 300px;
-  }
-}
+@media screen and (min-width: 1025px) {}

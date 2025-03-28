@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { CiCalendar } from 'react-icons/ci';
+import styles from './attracard.module.scss';
+import classNames from 'classnames';
 
 const Data = {
   content:
@@ -63,37 +65,37 @@ const AttraCard = (props) => {
     }
   };
   return (
-    <div className="relative">
-      <h2 className="cardHeading">{heading}</h2>
+    <div className={styles.carousel_container}>
+      <h2 className={styles.cardHeading}>{heading}</h2>
       <div
-        className="swiperRootContainer"
+        className={styles.swiperRootContainer}
         ref={tabsContainerRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeaveOrUp}
         onMouseUp={handleMouseLeaveOrUp}
         onMouseMove={handleMouseMove}
       >
-        <div className="wrapper">
+        <div className={styles.wrapper}>
           {Array(10)
             .fill({ ...Data })
             .map((item, i) => (
-              <div className="card" key={i}>
+              <div className={styles.card} key={i}>
                 <Link href={item.pageUrl}>
                   <Image
                     src="/destination-img/kuala-lumpur.webp"
-                    className="card__img"
+                    className={styles.card__img}
                     alt="kuala-lumpur"
                     width={0}
                     height={0}
                   />
-                  <div className="card__body">
-                    <h2 className="card__title">
+                  <div className={styles.card__body}>
+                    <h2 className={styles.card__title}>
                       {item.heading}-{i}
                     </h2>
-                    <p className="card__description">{item.content}</p>
-                    <div className="card_read">
-                      <p className="readMore">Read Article</p>
-                      <p className="card_releaseDate">
+                    <p className={styles.card__description}>{item.content}</p>
+                    <div className={styles.card_read}>
+                      <p className={styles.readMore}>Read Article</p>
+                      <p className={styles.card_releaseDate}>
                         <CiCalendar /> Aug 21
                       </p>
                     </div>
@@ -106,16 +108,22 @@ const AttraCard = (props) => {
       {device !== 'Mobile' && (
         <>
           <button
-            className="carousel-button left-carousel-button"
+            className={classNames(
+              styles.carousel_button,
+              styles.left_carousel_button
+            )}
             onClick={handlePrevButton}
           >
-            <span className="arrow">&#x276E;</span>
+            <span className={styles.arrow}>&#x276E;</span>
           </button>
           <button
-            className="carousel-button right-carousel-button"
+            className={classNames(
+              styles.carousel_button,
+              styles.right_carousel_button
+            )}
             onClick={handleNextButton}
           >
-            <span className="arrow">&#x276F;</span>
+            <span className={styles.arrow}>&#x276F;</span>
           </button>
         </>
       )}
