@@ -12,14 +12,8 @@ export default function Home() {
         <meta name="keywords" content="Triploom" />
       </Head>
 
-      <div className="container overallMar">
-        <div>
-          <h1>
-            Adventure, excitement, and unforgettable experiences—all in one
-            place!
-          </h1>
-          <SearchBar />
-        </div>
+      <div className="container">
+        <SearchBar />
 
         <AttraCard heading="Explore more destinations in India" />
         <AttraCard heading="Explore more destinations around the world" />

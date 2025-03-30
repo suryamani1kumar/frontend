@@ -1,9 +1,9 @@
-import React from "react";
-import { IoSearch } from "react-icons/io5";
-import styles from "./search.module.scss";
-import Dialog from "@mui/material/Dialog";
-import { IoArrowBackOutline } from "react-icons/io5";
-import { IoLocationOutline } from "react-icons/io5";
+import React from 'react';
+import { IoSearch } from 'react-icons/io5';
+import styles from './search.module.scss';
+import Dialog from '@mui/material/Dialog';
+import { IoArrowBackOutline } from 'react-icons/io5';
+import { IoLocationOutline } from 'react-icons/io5';
 
 const SearchBar = () => {
   const [openMobile, setOpenMobile] = React.useState(false);
@@ -17,6 +17,13 @@ const SearchBar = () => {
   };
   return (
     <>
+      <div className={styles.Banner}>
+        <h1>
+          Adventure, excitement, and unforgettable experiences
+          <br />
+          all in one place!
+        </h1>
+      </div>
       <div className={styles.dek_search_container}>
         <div className={styles.searchInput}>
           <IoSearch />
