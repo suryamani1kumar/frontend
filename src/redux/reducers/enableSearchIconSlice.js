@@ -3,8 +3,8 @@ const enableSearchIconSlice = createSlice({
   name: "searchIcon",
   initialState: false,
   reducers: {
-    toggleSearchIcon: (state) => {
-      return !state;
+    toggleSearchIcon: (state, action) => {
+      return (state = action.payload);
     },
   },
 });
