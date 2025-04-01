@@ -28,6 +28,8 @@ const SearchBar = () => {
       const absoluteBottom = rect.top + window.scrollY; // Add scrollY to get page-relative position
       if (window.scrollY >= absoluteBottom - heightHeader) {
         dispatch(toggleSearchIcon(true));
+      }else {
+        dispatch(toggleSearchIcon(false));
       }
     }
   }, []);
