@@ -1,12 +1,16 @@
-import React from 'react';
-import { IoSearch } from 'react-icons/io5';
-import styles from './search.module.scss';
-import Dialog from '@mui/material/Dialog';
-import { IoArrowBackOutline } from 'react-icons/io5';
-import { IoLocationOutline } from 'react-icons/io5';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { IoSearch } from "react-icons/io5";
+import styles from "./search.module.scss";
+import Dialog from "@mui/material/Dialog";
+import { IoArrowBackOutline } from "react-icons/io5";
+import { IoLocationOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { toggleSearchIcon } from "@/redux/reducers/enableSearchIconSlice";
 
 const SearchBar = () => {
-  const [openMobile, setOpenMobile] = React.useState(false);
+  const [openMobile, setOpenMobile] = useState(false);
+  const dispatch = useDispatch();
+  const searchBarRef = useRef();
 
   const handleClickOpen = () => {
     setOpenMobile(true);
@@ -15,6 +19,31 @@ const SearchBar = () => {
   const handleClose = () => {
     setOpenMobile(false);
   };
+
+  const updateDistance = useCallback(() => {
+    if (searchBarRef.current) {
+      const rect = searchBarRef.current.getBoundingClientRect();
+      const heightHeader =
+        document.getElementsByTagName("header")[0].offsetHeight;
+      const absoluteBottom = rect.top + window.scrollY; // Add scrollY to get page-relative position
+      if (window.scrollY >= absoluteBottom - heightHeader) {
+        dispatch(toggleSearchIcon(true));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    updateDistance(); // Get initial value
+
+    window.addEventListener("scroll", updateDistance);
+    window.addEventListener("resize", updateDistance);
+
+    return () => {
+      window.removeEventListener("scroll", updateDistance);
+      window.removeEventListener("resize", updateDistance);
+    };
+  }, [updateDistance]);
+
   return (
     <>
       <div className={styles.Banner}>
@@ -24,7 +53,7 @@ const SearchBar = () => {
           all in one place!
         </h1>
       </div>
-      <div className={styles.dek_search_container}>
+      <div className={styles.dek_search_container} ref={searchBarRef}>
         <div className={styles.searchInput}>
           <IoSearch />
           <input placeholder="Places to go, things to do ..." />
