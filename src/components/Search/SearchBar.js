@@ -4,20 +4,22 @@ import styles from "./search.module.scss";
 import Dialog from "@mui/material/Dialog";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { IoLocationOutline } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleSearchIcon } from "@/redux/reducers/enableSearchIconSlice";
+import { SearchEnable } from "@/redux/reducers/moblieSearchSlice";
+import { useDeviceType } from "@/hooks/useDevicetype";
 
 const SearchBar = () => {
-  const [openMobile, setOpenMobile] = useState(false);
+  const isSearchEnabled = useSelector((state) => state.enableSearch); // Get the toggle state from the store
   const dispatch = useDispatch();
-  const searchBarRef = useRef();
-
-  const handleClickOpen = () => {
-    setOpenMobile(true);
-  };
+  const searchBarRef = useRef(null);
+  const device = useDeviceType();
+  const searchInput = useRef(null);
+  const mobileSearchInput = useRef(null);
+  const [searchinput, setSearchInput] = useState("");
 
   const handleClose = () => {
-    setOpenMobile(false);
+    dispatch(SearchEnable(false));
   };
 
   const updateDistance = useCallback(() => {
@@ -28,7 +30,7 @@ const SearchBar = () => {
       const absoluteBottom = rect.top + window.scrollY; // Add scrollY to get page-relative position
       if (window.scrollY >= absoluteBottom - heightHeader) {
         dispatch(toggleSearchIcon(true));
-      }else {
+      } else {
         dispatch(toggleSearchIcon(false));
       }
     }
@@ -44,7 +46,19 @@ const SearchBar = () => {
       window.removeEventListener("scroll", updateDistance);
       window.removeEventListener("resize", updateDistance);
     };
-  }, [updateDistance]);
+  }, []);
+
+  const handleInput = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleFocus = () => {
+    if (device === "Mobile") {
+      searchInput.current.blur();
+      dispatch(SearchEnable(true));
+      return;
+    }
+  };
 
   return (
     <>
@@ -58,22 +72,33 @@ const SearchBar = () => {
       <div className={styles.dek_search_container} ref={searchBarRef}>
         <div className={styles.searchInput}>
           <IoSearch />
-          <input placeholder="Places to go, things to do ..." />
+          <input
+            ref={searchInput}
+            type="text"
+            name={searchinput}
+            placeholder="Places to go, things to do ..."
+            onChange={handleInput}
+            onFocus={handleFocus}
+          />
         </div>
 
-        <button className={styles.searchBtn} onClick={handleClickOpen}>
-          Search
-        </button>
+        <button className={styles.searchBtn}>Search</button>
       </div>
 
-      {openMobile && (
-        <Dialog fullScreen open={open} onClose={handleClose}>
+      {isSearchEnabled && (
+        <Dialog fullScreen open={isSearchEnabled} onClose={handleClose}>
           <div className={styles.search_container}>
             <div className={styles.input_container}>
               <span className={styles.inputback_icon} onClick={handleClose}>
                 <IoArrowBackOutline />
               </span>
-              <input type="text" placeholder="Starting From" />
+              <input
+                type="text"
+                name={searchinput}
+                placeholder="Places to go, things to do ..."
+                ref={mobileSearchInput}
+                onChange={handleInput}
+              />
             </div>
 
             <div className={styles.search_results}>
