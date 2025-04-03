@@ -9,13 +9,15 @@ import { IoMenu } from "react-icons/io5";
 import { useDeviceType } from "@/hooks/useDevicetype";
 import Drawer from "@mui/material/Drawer";
 import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { SearchEnable } from "@/redux/reducers/moblieSearchSlice";
 
 const Header = () => {
   const SearchIcon = useSelector((state) => state.toggleSearchIcon); // Get the toggle state from the store
   const router = useRouter();
   const sticky = useStickyHeader(40);
   const device = useDeviceType();
+  const dispatch = useDispatch();
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const toggleDrawerOn = () => {
@@ -34,12 +36,16 @@ const Header = () => {
 
   const searchHandle = () => {
     if (device === "Mobile") {
+      dispatch(SearchEnable(true));
+      return;
     }
+    
     if (device === "Desktop" || device === "Tablet") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
   };
+
   return (
     <header
       className={classNames(styles.headerContainer, {
