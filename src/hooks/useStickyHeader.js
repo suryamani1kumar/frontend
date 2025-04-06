@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect  } from 'react';
 
 export const useStickyHeader = (offset = 0) => {
   const [stick, setStick] = useState(false);
@@ -7,13 +7,13 @@ export const useStickyHeader = (offset = 0) => {
     setStick(window.scrollY > offset);
   };
 
-  useLayoutEffect(() => {
+  useEffect (() => {
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  },[]);
 
   return stick;
 };
