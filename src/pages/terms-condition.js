@@ -1,7 +1,8 @@
 import React from 'react';
 
 const TermsCondition = () => {
-  return <div>TermsCondition</div>;
+
+  return <div>{process.env.NEXT_PUBLIC_APP_NAME}</div>;
 };
 
 export default TermsCondition;
