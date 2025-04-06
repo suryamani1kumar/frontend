@@ -11,10 +11,13 @@ export default function Home() {
         <meta name="description" content="Triploom" />
         <meta name="keywords" content="Triploom" />
       </Head>
+      <div className=''>
+        <div className="container">
+          <SearchBar />
+        </div>
+      </div>
 
       <div className="container">
-        <SearchBar />
-
         <AttraCard heading="Explore more destinations in India" />
         <AttraCard heading="Explore more destinations around the world" />
         <GlobalAttractions />
