@@ -66,8 +66,8 @@ const Header = () => {
 
         <div className="flexcontainer">
           {SearchIcon && (
-            <div className={styles.Headsearch}>
-              <IoSearchSharp onClick={searchHandle} />
+            <div className={styles.Headsearch} onClick={searchHandle}>
+              <IoSearchSharp  />
             </div>
           )}
 
