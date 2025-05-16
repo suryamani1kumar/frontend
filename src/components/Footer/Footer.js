@@ -1,5 +1,5 @@
 import React from "react";
-import { RiTelegram2Fill } from "react-icons/ri";
+import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhone } from "react-icons/fa6";
 import { FaEnvelopeOpen } from "react-icons/fa";
@@ -110,7 +110,7 @@ const Footer = () => {
                   <form action="#">
                     <input type="text" placeholder="Email Address" />
                     <button>
-                      <RiTelegram2Fill />
+                         <FaTelegramPlane />
                     </button>
                   </form>
                 </div>
