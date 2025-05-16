@@ -4,14 +4,14 @@ import { useStickyHeader } from "@/hooks/useStickyHeader";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { IoSearchSharp } from "react-icons/io5";
+import { IoSearchSharp, IoGlobe } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { useDeviceType } from "@/hooks/useDevicetype";
 import Drawer from "@mui/material/Drawer";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchEnable } from "@/redux/reducers/moblieSearchSlice";
-
+import { NavBarItems } from "@/utils/constants";
 const Header = () => {
   const SearchIcon = useSelector((state) => state.toggleSearchIcon); // Get the toggle state from the store
   const router = useRouter();
@@ -19,7 +19,6 @@ const Header = () => {
   const device = useDeviceType();
   const dispatch = useDispatch();
   const [openDrawer, setOpenDrawer] = useState(false);
-
   const toggleDrawerOn = () => {
     setOpenDrawer(true);
   };
@@ -39,7 +38,7 @@ const Header = () => {
       dispatch(SearchEnable(true));
       return;
     }
-    
+
     if (device === "Desktop" || device === "Tablet") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
@@ -53,21 +52,42 @@ const Header = () => {
       })}
     >
       <div className="container flexcontainer">
-        <div>
+        <div
+          className={
+            device === "Desktop"
+              ? styles.logo_inner_container
+              : styles.logo_inner_container_mobile
+          }
+        >
           <Link href={"/"}>
-            <Image
-              src="https://dummyimage.com/130x40/878487/fff"
-              height={40}
-              width={130}
-              alt="logo"
-            />
+            <p className="text-xl font-bold">Backpackpulse</p>
           </Link>
+          <Image src={"/logo.png"} alt="logo" width={30} height={30} />
         </div>
-
+        
+        
         <div className="flexcontainer">
+        {device === "Desktop" && (
+          <>
+          <ul className={styles?.desktop_menu_item}>
+            {NavBarItems.map((item) => (
+              <Link href={item?.link} key={item.id}>
+                <li>{item?.name}</li>
+              </Link>
+            ))}
+          </ul>
+          <div className={styles?.sideItemContainer}>
+            <div className={styles?.side_item_container}>
+              <IoGlobe /> <span></span>
+            </div>
+            <button className={styles?.signInButton}>sign in</button>
+          </div>
+          </>
+          
+        )}
           {SearchIcon && (
             <div className={styles.Headsearch} onClick={searchHandle}>
-              <IoSearchSharp  />
+              <IoSearchSharp />
             </div>
           )}
 
@@ -83,13 +103,9 @@ const Header = () => {
           <div className={styles.menu_container}>
             <div className={styles.menu_header}>
               <Link href={"/"}>
-                <Image
-                  src="https://dummyimage.com/180x50/878487/fff"
-                  height={0}
-                  width={0}
-                  alt="logo"
-                />
+                <p className="text-xl font-bold">Backpackpulse</p>
               </Link>
+              <Image src={"/logo.png"} alt="logo" width={30} height={30} />
               <span className={styles.close_btn} onClick={toggleDrawerOff}>
                 &times;
               </span>

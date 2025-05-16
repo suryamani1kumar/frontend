@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Triploom</title>
-        <meta name="description" content="Triploom" />
-        <meta name="keywords" content="Triploom" />
+        <title>Backpackpluse</title>
+        <meta name="description" content="Backpackpluse" />
+        <meta name="keywords" content="Backpackpluse" />
       </Head>
       <div className=''>
         <div className="container">

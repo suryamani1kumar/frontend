@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={'text-center'}>
-        Copyright © {currentYear} Triploom. All rights reserved
+        Copyright © {currentYear} Backpackpluse. All rights reserved
       </div>
     </footer>
   );
