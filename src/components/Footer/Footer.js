@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="footer-section">
       <div className="container">
-        <div className="footer-cta pt-5 pb-5">
+        <div className="footer-cta ">
           <div className="row">
             <div className="col-xl-4 col-md-4 mb-30">
               <div className="single-cta">
@@ -41,43 +41,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="footer-content pt-5 pb-5">
+        <div className="footer-content">
           <div className="row">
-            <div className="col-xl-4 col-lg-4 mb-50">
-              <div className="footer-widget">
-                <div className="footer-logo">
-                  <Link href="index.html">
-                    <img
-                      src="https://i.ibb.co/QDy827D/ak-logo.png"
-                      className="img-fluid"
-                      alt="logo"
-                    />
-                  </Link>
-                </div>
-                <div className="footer-text">
-                  <p>
-                    Lorem ipsum dolor sit amet, consec tetur adipisicing elit,
-                    sed do eiusmod tempor incididuntut consec tetur adipisicing
-                    elit,Lorem ipsum dolor sit amet.
-                  </p>
-                </div>
-                <div className="footer-social-icon">
-                  <span>Follow us</span>
-                  <div className="d-flex">
-                    <Link href="/">
-                      <FaFacebookF className="facebook-bg" />
-                    </Link>
-                    <Link href="/">
-                      <FaFacebookF className="facebook-bg" />
-                    </Link>
-                    <Link href="/">
-                      <FaFacebookF className="facebook-bg" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
+            
+            <div className="col-xl-8 col-lg-8 col-md-6 mb-30">
               <div className="footer-widget">
                 <div className="footer-widget-heading">
                   <h3>Useful Links</h3>

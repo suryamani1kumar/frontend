@@ -33,7 +33,12 @@ body {
 @media screen and (min-width: 768px) {}
 
 /* 3. Laptop & Desktop (1025px and above) */
-@media screen and (min-width: 1025px) {}
+@media screen and (min-width: 1025px) {
+  .footer-widget ul li {
+  
+  width: 33%;
+}
+}
 ul {
   margin: 0px !important;
   padding: 0px !important;
@@ -43,11 +48,12 @@ ul {
   position: relative;
 }
 .footer-cta {
+  padding: 20px  0;
   border-bottom: 1px solid #373636;
 }
 .single-cta svg {
   color: #ff5e14;
-  font-size: 30px;
+  font-size: 25px;
   float: left;
   margin-top: 8px;
 }
@@ -75,6 +81,7 @@ ul {
 }
 .footer-content {
   position: relative;
+  padding: 30px 0;
   z-index: 2;
 }
 .footer-pattern img {
@@ -183,7 +190,6 @@ ul {
 }
 .copyright-area {
   background: #202020;
-  padding: 25px 0;
 }
 .copyright-text p {
   margin: 0;
