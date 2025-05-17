@@ -1,9 +1,81 @@
 @import '../../styles/variables.scss';
-.FooterMainContainer {
+
+.footer_section {
   background: $footer-bgcolor;
-  color: $footer-color;
-  .footer {
+  position: relative;
+
+  .footer_cta {
+    padding: 20px 0;
+    border-bottom: 1px solid #373636;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: auto;
+
+    .single_cta {
+      display: flex;
+
+      svg {
+        color: #ff5e14;
+        font-size: 25px;
+        margin-top: 8px;
+      }
+
+      .cta_text {
+        padding: 0 0 15px 15px;
+
+        h4 {
+          color: #fff;
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+
+        span {
+          color: #878787;
+          font-size: 15px;
+        }
+
+        a {
+          color: #878787;
+          text-decoration: none;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .footer_content {
+    position: relative;
+    padding: 30px 0;
+    z-index: 2;
+  }
+
+  .copyright_area {
+    background: $footer-bottombgColor;
+  }
+}
+
+
+/* 2. Tablet (768px - 1024px) */
+@media screen and (min-width: 768px) {
+  .footer_section {
+    .footer_cta {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+
+/* 3. Laptop & Desktop (1025px and above) */
+@media screen and (min-width: 1025px) {
+  .footer_section {
+    .footer_cta {
+      grid-template-columns: auto auto auto;
+
+      .single_cta {
+        .cta_text {
+          padding: 0 0 0 15px;
+        }
+      }
+    }
+
   }
 }
