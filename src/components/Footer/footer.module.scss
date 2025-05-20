@@ -1,5 +1,7 @@
+@import "../../styles/variables.scss";
+
 .footer_section {
-  background: #151414;
+  background: $footer-bgcolor;
   position: relative;
 
   .footer_cta {
@@ -47,24 +49,29 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
+
     .footer_linklist {
       ul {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
         gap: 5px;
+
         li {
           margin-bottom: 12px;
+
           a {
             color: #878787;
             text-transform: capitalize;
             text-decoration: none;
           }
         }
+
         li a:hover {
           color: #ff5e14;
         }
       }
     }
+
     .footer_heading {
       color: #fff;
       font-size: 20px;
@@ -72,6 +79,7 @@
       margin-bottom: 40px;
       position: relative;
     }
+
     .footer_heading::before {
       content: "";
       position: absolute;
@@ -81,6 +89,7 @@
       width: 50px;
       background: #ff5e14;
     }
+
     .footer_subscribe {
       p {
         margin-bottom: 14px;
@@ -88,8 +97,10 @@
         color: #7e7e7e;
         line-height: 28px;
       }
+
       .subscribe_form {
         position: relative;
+
         input {
           width: 100%;
           padding: 14px 28px;
@@ -98,6 +109,7 @@
           color: #fff;
           outline: none;
         }
+
         button {
           position: absolute;
           right: 0;
@@ -105,6 +117,7 @@
           padding: 14px 20px;
           border: 1px solid #ff5e14;
           top: 0;
+
           svg {
             color: #fff;
             font-size: 22px;
@@ -116,27 +129,34 @@
   }
 
   .footer_bottom {
-    background: #202020;
+    background: $footer-bottombgColor;
+
     .copyright_area {
       display: flex;
       justify-content: space-around;
+
       .copyright_text {
         margin: 0;
         font-size: 14px;
         color: #878787;
+
         a {
           color: #ff5e14;
         }
       }
+
       .footer_menu {
         display: none;
+
         li {
           margin-left: 20px;
+
           a {
             font-size: 14px;
             color: #878787;
           }
         }
+
         li:hover a {
           color: #ff5e14;
         }
@@ -151,6 +171,7 @@
     .footer_cta {
       grid-template-columns: auto auto;
     }
+
     .footer_content {
       .footer_linklist {
         ul {
@@ -159,6 +180,7 @@
         }
       }
     }
+
     .footer_bottom {
       .copyright_area {
         .footer_menu {
@@ -181,11 +203,13 @@
         }
       }
     }
+
     .footer_content {
       flex-direction: row;
+
       .footer_linklist {
         flex: 1;
-        
+
       }
     }
   }
