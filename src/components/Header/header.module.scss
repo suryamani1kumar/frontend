@@ -79,7 +79,64 @@
 .menu_item:hover {
   background-color: #f4f2f2;
 }
-
+.desktop_menu_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 15px;
+  font-size: 16px;
+  width: 33%;
+  gap: 15px;
+}
+.desktop_menu_item li {
+  cursor: pointer;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: medium;
+  font-weight: 700;
+}
+.sideItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 33%;
+}
+.signInButton {
+  background-color: #212121;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #434242;
+  }
+}
+.logo_inner_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+}
+.logo_inner_container_mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side_item_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
 @keyframes slideDown {
   from {
     transform: translateY(-100%);
