@@ -11,7 +11,7 @@ const Blog = () => {
   }, []);
   console.log("data", data.
     blog)
-  return <div className="container">{data?.blog?.map((item) => <Link href={`/blog/${item.pageUrl}`}>{item.pageUrl}</Link>)}</div>;
+  return <div className="container">{data?.blog?.map((item,i) => <Link href={`/blog/${item.pageUrl}`} key={i}>{item.pageUrl}</Link>)}</div>;
 };
 
 export default Blog;
