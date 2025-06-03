@@ -11,7 +11,7 @@ const TrackingPixel = () => {
         (position) => {
           const { latitude, longitude } = position.coords;
           const img = new Image();
-          img.src = `http://localhost:5000/track?url=${fullpageUrl}&lat=${latitude}&long=${longitude}`;
+          img.src = `${process.env.NEXT_PUBLIC_HOSTNAME}track?url=${fullpageUrl}&lat=${latitude}&long=${longitude}`;
         },
         (error) => {
           console.log(error);
