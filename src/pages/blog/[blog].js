@@ -12,7 +12,7 @@ const BlogDetails = () => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_HOSTNAME}/api/blog?pageurl=${query.blog}`,
+        `${process.env.NEXT_PUBLIC_HOSTNAME}blog?pageurl=${query.blog}`,
         {
           headers: {
             'api-key': process.env.NEXT_PUBLIC_API_KEY,

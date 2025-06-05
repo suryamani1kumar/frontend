@@ -1,9 +1,11 @@
-import axios from "axios";
+import { sumbitData } from "@/service/postData";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 
 const TrackingPixel = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const fullpageUrl = router.asPath;
   const activityRef = useRef({
     pageUrl: "",
@@ -18,19 +20,6 @@ const TrackingPixel = () => {
     screenWidth: "",
     screenHeight: "",
   });
-
-  const sendToServer = async (data) => {
-    try {
-      console.log("Sending to server:", data);
-      await axios.post("http://localhost:5000/api/track", data, {
-        headers: {
-          "api-key": "your-valid-api-key",
-        },
-      });
-    } catch (error) {
-      console.error("Failed to send activity:", error);
-    }
-  };
 
   const debounce = (func, timer) => {
     let clearTimer;
@@ -100,7 +89,14 @@ const TrackingPixel = () => {
 
     const dataSend = () => {
       activityRef.current.timeEnd = Date.now();
-      sendToServer({ ...activityRef.current });
+      navigator.sendBeacon(
+        dispatch(
+          sumbitData({
+            url: `track`,
+            requestBody: { ...activityRef.current },
+          })
+        )
+      );
     };
 
     window.addEventListener("click", handleClick);
