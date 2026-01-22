@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
