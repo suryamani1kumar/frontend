@@ -1,3 +1,4 @@
+"use client"
 import { useDeviceType } from '@/hooks/useDevicetype';
 import Image from 'next/image';
 import Link from 'next/link';
