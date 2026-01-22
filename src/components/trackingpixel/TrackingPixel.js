@@ -1,5 +1,6 @@
+"use client"
 import { sumbitData } from "@/service/postData";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
@@ -108,7 +109,7 @@ const TrackingPixel = () => {
       .forEach((el) => el.addEventListener("input", handleInput));
 
     window.addEventListener("beforeunload", dataSend);
-    router.events.on("routeChangeStart", dataSend);
+    // router.events.on("routeChangeStart", dataSend);
 
     return () => {
       window.removeEventListener("click", handleClick);
