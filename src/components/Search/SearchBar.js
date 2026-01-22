@@ -1,3 +1,4 @@
+"use client"
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import styles from "./search.module.scss";
