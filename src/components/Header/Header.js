@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 import { useStickyHeader } from "@/hooks/useStickyHeader";
@@ -8,10 +9,10 @@ import { IoSearchSharp, IoGlobe } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { useDeviceType } from "@/hooks/useDevicetype";
 import Drawer from "@mui/material/Drawer";
-import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchEnable } from "@/redux/reducers/moblieSearchSlice";
 import { NavBarItems } from "@/utils/constants";
+import { useRouter } from "next/navigation";
 const Header = () => {
   const SearchIcon = useSelector((state) => state.toggleSearchIcon); // Get the toggle state from the store
   const router = useRouter();
@@ -26,12 +27,12 @@ const Header = () => {
     setOpenDrawer(false);
   };
 
-  useEffect(() => {
-    router.events.on("routeChangeComplete", toggleDrawerOff);
-    return () => {
-      router.events.off("routeChangeComplete", toggleDrawerOff);
-    };
-  }, [router]);
+  // useEffect(() => {
+  //   router.events.on("routeChangeComplete", toggleDrawerOff);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", toggleDrawerOff);
+  //   };
+  // }, [router]);
 
   const searchHandle = () => {
     if (device === "Mobile") {
