@@ -1,9 +1,10 @@
-import { globalAttractions } from '@/service/homePage';
-import { Tab, Tabs } from '@mui/material';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import style from './attraction.module.css';
+"use client";
+import { globalAttractions } from "@/service/homePage";
+import { Tab, Tabs } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import style from "./attraction.module.css";
 
 export default function GlobalAttractions() {
   const [value, setValue] = useState(0);
@@ -18,8 +19,8 @@ export default function GlobalAttractions() {
         variant="scrollable"
         className="attractabHeader"
         style={{
-          borderBottom: '1px solid #ddd',
-          margin: '15px 0',
+          borderBottom: "1px solid #ddd",
+          margin: "15px 0",
         }}
       >
         {globalAttractions.map((Destname, i) => (
@@ -45,7 +46,7 @@ export default function GlobalAttractions() {
                 </li>
               ))}
             </ul>
-          )
+          ),
       )}
     </>
   );
