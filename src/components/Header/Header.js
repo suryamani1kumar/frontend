@@ -61,9 +61,8 @@ const Header = () => {
           }
         >
           <Link href={"/"}>
-            <p className="text-xl font-bold">Backpackpulse</p>
+            <Image src={"/logo.png"} alt="logo" width={150} height={40} />
           </Link>
-          <Image src={"/logo.png"} alt="logo" width={30} height={30} />
         </div>
         {device === "Desktop" && (
           <ul className={styles?.desktop_menu_item}>
@@ -101,9 +100,8 @@ const Header = () => {
           <div className={styles.menu_container}>
             <div className={styles.menu_header}>
               <Link href={"/"}>
-                <p className="text-xl font-bold">Backpackpulse</p>
+                <Image src={"/logo.png"} alt="logo" width={30} height={30} />
               </Link>
-              <Image src={"/logo.png"} alt="logo" width={30} height={30} />
               <span className={styles.close_btn} onClick={toggleDrawerOff}>
                 &times;
               </span>
