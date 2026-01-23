@@ -16,7 +16,7 @@ const Footer = () => {
             <FaLocationDot />
             <div className={styles.cta_text}>
               <h4>Find us</h4>
-              <span>1010 Avenue, sw 54321, chandigarh</span>
+              <span>XXXX Avenue, sw XXXXX, chandigarh</span>
             </div>
           </div>
 
@@ -24,7 +24,7 @@ const Footer = () => {
             <FaPhone />
             <div className={styles.cta_text}>
               <h4>Call us</h4>
-              <Link href="tel:+91-855-561-4094">+91-855-561-4094</Link>
+              <Link href="tel:+91-000-000-000">+91-000-000-0000</Link>
             </div>
           </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
             <FaEnvelopeOpen />
             <div className={styles.cta_text}>
               <h4>Mail us</h4>
-              <Link href="mailto:triploom@info.com">triploom@info.com</Link>
+              <Link href="mailto:tourmingle@info.com">tourmingle@info.com</Link>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Footer = () => {
           <div className={styles.copyright_area}>
             <div className={styles.copyright_text}>
               Copyright &copy; {currentYear}, All Right Reserved{" "}
-              <Link href="/">Triploom</Link>
+              <Link href="/">Tourmingle</Link>
             </div>
 
             <ul className={styles.footer_menu}>
