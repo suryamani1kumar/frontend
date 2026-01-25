@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -44,10 +44,18 @@ const Footer = () => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/about-us">about</Link>
+                <Link
+                  href="/about-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  about
+                </Link>
               </li>
               <li>
-                <Link href="/blog">Blog</Link>
+                <Link href="/blog" target="_blank" rel="noopener noreferrer">
+                  Blog
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,13 +87,31 @@ const Footer = () => {
 
             <ul className={styles.footer_menu}>
               <li>
-                <Link href="/terms-condition">Terms & Condition</Link>
+                <Link
+                  href="/terms-condition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Terms & Condition
+                </Link>
               </li>
               <li>
-                <Link href="/privacy-policy">Privacy Policy</Link>
+                <Link
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <Link href="/contact-us">Contact </Link>
+                <Link
+                  href="/contact-us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contact{" "}
+                </Link>
               </li>
             </ul>
           </div>

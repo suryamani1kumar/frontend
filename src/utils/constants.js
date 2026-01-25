@@ -15,3 +15,5 @@ export const NavBarItems = [
     link: "/blog",
   },
 ];
+
+export const siteName = "TourMingle";
