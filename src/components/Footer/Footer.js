@@ -88,7 +88,7 @@ const Footer = () => {
             <ul className={styles.footer_menu}>
               <li>
                 <Link
-                  href="/terms-condition"
+                  href="/terms-and-condition"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
