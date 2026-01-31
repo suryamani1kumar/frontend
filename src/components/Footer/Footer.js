@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -6,6 +5,7 @@ import { FaPhone } from "react-icons/fa6";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import styles from "./footer.module.scss";
 import Link from "next/link";
+import { email, tfn } from "@/utils/constants";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
             <FaPhone />
             <div className={styles.cta_text}>
               <h4>Call us</h4>
-              <Link href="tel:+91-000-000-000">+91-000-000-0000</Link>
+              <Link href={`tel:${tfn}`}>{tfn}</Link>
             </div>
           </div>
 
@@ -32,7 +32,7 @@ const Footer = () => {
             <FaEnvelopeOpen />
             <div className={styles.cta_text}>
               <h4>Mail us</h4>
-              <Link href="mailto:tourmingle@info.com">tourmingle@info.com</Link>
+              <Link href={`mailto:${email}`}>{email}</Link>
             </div>
           </div>
         </div>

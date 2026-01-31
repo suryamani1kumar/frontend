@@ -1,0 +1,45 @@
+.BlogDetails_Image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+.BlogHeading {
+  font-size: 21px;
+  font-weight: 600;
+}
+.BlogDetails h2 {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* 2. Tablet (768px - 1024px) */
+@media screen and (min-width: 768px) {
+  .BlogDetails_Image {
+    height: 400px;
+  }
+  .BlogHeading {
+    font-size: 27px;
+    margin: 15px 0;
+  }
+}
+
+/* 3. Laptop & Desktop (1025px and above) */
+@media screen and (min-width: 1025px) {
+  .BlogDetails_Image {
+    height: 500px;
+  }
+  .BlogHeading {
+    font-size: 27px;
+  }
+  .smallDescription {
+    margin: 15px 0px;
+    font-size: 16px;
+  }
+  .BlogDetails h2 {
+    font-size: 22px;
+    margin: 15px 0px;
+  }
+  .BlogDetails p {
+    font-size: 16px;
+  }
+}

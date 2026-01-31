@@ -120,7 +120,7 @@ const TrackingPixel = () => {
         .querySelectorAll("input, textarea, select")
         .forEach((el) => el.removeEventListener("input", handleInput));
       window.removeEventListener("beforeunload", dataSend);
-      router.events.off("routeChangeStart", dataSend);
+      // router.events.off("routeChangeStart", dataSend);
     };
   }, [fullpageUrl]);
 
