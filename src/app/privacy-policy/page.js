@@ -1,9 +1,8 @@
-import React from 'react'
+import PrivacyPolicySection from "@/components/Privacypolicy/PrivacyPolicySection";
+import React from "react";
 
-const Privacy = () => {
-  return (
-    <div className='container'>Privacy</div>
-  )
-}
+const PrivacyPolicy = () => {
+  return <PrivacyPolicySection />;
+};
 
-export default Privacy
+export default PrivacyPolicy;
