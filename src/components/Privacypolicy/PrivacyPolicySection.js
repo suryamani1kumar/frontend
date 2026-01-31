@@ -16,12 +16,13 @@ const PrivacyPolicySection = () => {
             height={400}
             width={400}
             alt="privacy-policy"
-            loading="lazy"
+            priority
+            sizes="(max-width: 768px) 100vw, 400px"
             className={styles.img}
           />
         </div>
         <div className={styles.contentSection}>
-          <h1 className={styles.title}>Privacy Policy of {siteName}</h1>
+          <h1 className={styles.title}>Privacy Policy</h1>
           <p className={styles.description}>
             At <strong>{siteName}</strong>, your privacy is our top priority.
             This Privacy Policy explains how we collect, use, and protect your

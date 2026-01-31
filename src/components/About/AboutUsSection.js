@@ -12,7 +12,8 @@ const AboutUsSection = () => {
             height={400}
             width={400}
             alt="about-us"
-            loading="lazy"
+            priority
+            sizes="(max-width: 768px) 100vw, 400px"
             className={styles.img}
           />
         </div>
