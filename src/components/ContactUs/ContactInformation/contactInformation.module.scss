@@ -1,0 +1,88 @@
+@use "@/styles/variables" as *;
+.main {
+  width: 48%;
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
+  .contactInfoSection {
+    background-color: rgba(208, 206, 206, 0.466);
+    padding: 10px;
+    border-radius: 8px;
+    .title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+      }
+    }
+    .horizontalLine {
+      width: 100%;
+      height: 2px;
+      background-color: rgb(169, 168, 168);
+      margin-bottom: 20px;
+
+      @media (max-width: $breakpoint-mobile) {
+        height: 2px;
+        margin-bottom: 15px;
+      }
+    }
+    .informationComponents {
+      .informationComponentsSubSection {
+        display: flex;
+        gap: 10px;
+
+        padding: 8px 0;
+        @media (max-width: $breakpoint-mobile) {
+          gap: 8px;
+          padding: 6px 0;
+          display: flex;
+          flex-direction: column;
+        }
+        @media (max-width: $breakpoint-tablet) {
+          gap: 8px;
+          padding: 6px 0;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .singleInformation {
+        display: flex;
+        font-size: 1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 0.8rem;
+        }
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 0.8rem;
+        }
+        .icons {
+          font-size: 1.2rem;
+          margin-right: 10px;
+          @media (max-width: $breakpoint-mobile) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+  .mapSection {
+    width: 100%;
+    height: 170px;
+    border-radius: 8px;
+    margin-top: 15px;
+
+    @media (max-width: $breakpoint-mobile) {
+      height: 150px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      height: 170px;
+    }
+  }
+}
