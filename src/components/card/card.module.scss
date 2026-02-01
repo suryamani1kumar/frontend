@@ -1,6 +1,6 @@
 .card {
   flex: 0 0 auto;
-  width: 250px;
+  width: 22%;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -62,7 +62,7 @@
 /* 2. Tablet (768px - 1024px) */
 @media screen and (min-width: 768px) {
   .card {
-    width: 270px;
+    width: 26%;
     .card__img {
       height: 175px;
     }
@@ -72,6 +72,6 @@
 /* 3. Laptop & Desktop (1025px and above) */
 @media screen and (min-width: 1025px) {
   .card {
-    width: 300px;
+    width: 28%;
   }
 }
