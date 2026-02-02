@@ -15,6 +15,7 @@ export const NavBarItems = [
   },
 ];
 
+
 export const siteName = "TourMingle";
 export const primarySiteEmail = "info@tourmingle.com";
 export const primarySitePhone = "+1-000-000-0000";
