@@ -1,6 +1,7 @@
 User-agent: *
 
-Disallow:
+Disallow: /
 
 Sitemap: https://www.tourmingle.com/sitemap.xml
+
 
