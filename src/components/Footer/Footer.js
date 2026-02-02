@@ -5,7 +5,7 @@ import { FaPhone } from "react-icons/fa6";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import styles from "./footer.module.scss";
 import Link from "next/link";
-import { email, tfn } from "@/utils/constants";
+import { email, siteName, tfn } from "@/utils/constants";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -82,7 +82,7 @@ const Footer = () => {
           <div className={styles.copyright_area}>
             <div className={styles.copyright_text}>
               Copyright &copy; {currentYear}, All Right Reserved{" "}
-              <Link href="/">Tourmingle</Link>
+              <Link href="/">{siteName}</Link>
             </div>
 
             <ul className={styles.footer_menu}>
