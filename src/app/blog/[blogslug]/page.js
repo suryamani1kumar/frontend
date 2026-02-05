@@ -43,19 +43,23 @@ export default async function BlogDetailsPage({ params }) {
   return (
     <>
       <Image
-        src="/destination-img/kuala-lumpur.webp"
+        src={blog.blog?.images?.url || "/destination-img/kuala-lumpur.webp"}
         className={styles.BlogDetails_Image}
         alt="kuala-lumpur"
         width={0}
         height={0}
       />
       <div className="container">
-        <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
-        <p className={styles.smallDescription}>{blog.blog.smallDescription}</p>
-        <div
-          dangerouslySetInnerHTML={{ __html: blog.blog.content }}
-          className={styles.BlogDetails}
-        />
+        <div className={styles.BlogDetails}>
+          <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
+          <p className={styles.smallDescription}>
+            {blog.blog.smallDescription}
+          </p>
+          <div
+            dangerouslySetInnerHTML={{ __html: blog.blog.content }}
+            className={styles.BlogDetailsDescr}
+          />
+        </div>
       </div>
     </>
   );
