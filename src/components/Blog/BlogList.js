@@ -11,7 +11,7 @@ const BlogList = ({ blog }) => {
         <Card
           key={i}
           url={`/blog/${item.pageUrl}`}
-          img="/destination-img/kuala-lumpur.webp"
+          img={item.images?.url || "/destination-img/kuala-lumpur.webp"}
           heading={truncateText(item.heading, 60)}
           content={truncateText(item.smallDescription, 157)}
           createDate={dayjs(item.createdAt).format("MMM D, YYYY")}
