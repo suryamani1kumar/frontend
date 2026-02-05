@@ -1,3 +1,15 @@
+.BlogDetails p {
+  line-height: 1.6;
+  text-align: justify;
+  letter-spacing: 0.4px;
+  color: #565656;
+}
+.BlogDetails p strong {
+  color: #000000;
+}
+.BlogDetailsDescr img {
+  border-radius: 10px;
+}
 .BlogDetails_Image {
   width: 100%;
   height: 260px;
@@ -10,6 +22,20 @@
 .BlogDetails h2 {
   font-size: 19px;
   font-weight: 600;
+}
+
+.BlogDetailsDescr ul {
+  display: block;
+  margin: 10px 0 10px 20px !important;
+}
+.BlogDetailsDescr ul li {
+  color: #565656 !important;
+  padding: 5px 0 !important;
+  white-space: normal !important;
+  word-break: break-word;
+  line-height: 1.6;
+  text-align: justify;
+  letter-spacing: 0.4px;
 }
 
 /* 2. Tablet (768px - 1024px) */
@@ -25,6 +51,9 @@
 
 /* 3. Laptop & Desktop (1025px and above) */
 @media screen and (min-width: 1025px) {
+  .BlogDetails {
+    width: 70%;
+  }
   .BlogDetails_Image {
     height: 500px;
   }
@@ -39,7 +68,11 @@
     font-size: 22px;
     margin: 15px 0px;
   }
-  .BlogDetails p {
+  .BlogDetails p,
+  .BlogDetailsDescr p {
     font-size: 16px;
+  }
+  .BlogDetailsDescr ul {
+    margin: 10px 0 10px 30px !important;
   }
 }
