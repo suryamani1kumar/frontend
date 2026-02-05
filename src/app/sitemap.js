@@ -44,7 +44,7 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/terms-condition`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/terms-and-condition`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
