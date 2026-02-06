@@ -1,7 +1,10 @@
-import { getBlogBySlug } from "@/service/apicalling";
+import { getBlog, getBlogBySlug } from "@/service/apicalling";
 import { notFound } from "next/navigation";
 import styles from "@/components/Blog/blogDetails.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import dayjs from "dayjs";
+import { truncateText } from "@/utils/constants";
 
 export async function generateMetadata({ params }) {
   const { blogslug } = await params;
@@ -40,6 +43,8 @@ export default async function BlogDetailsPage({ params }) {
     notFound();
   }
 
+  const bloglist = await getBlog(1, 8);
+
   return (
     <>
       <Image
@@ -50,15 +55,51 @@ export default async function BlogDetailsPage({ params }) {
         height={0}
       />
       <div className="container">
-        <div className={styles.BlogDetails}>
-          <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
-          <p className={styles.smallDescription}>
-            {blog.blog.smallDescription}
-          </p>
-          <div
-            dangerouslySetInnerHTML={{ __html: blog.blog.content }}
-            className={styles.BlogDetailsDescr}
-          />
+        <div style={{ display: "flex", gap: "20px" }}>
+          <div className={styles.BlogDetails}>
+            <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
+            <p className={styles.smallDescription}>
+              {blog.blog.smallDescription}
+            </p>
+            <div
+              dangerouslySetInnerHTML={{ __html: blog.blog.content }}
+              className={styles.BlogDetailsDescr}
+            />
+          </div>
+          <div className={styles.BlogDetails_recentblog}>
+            <h5>Recent Blogs</h5>
+            {bloglist.blog.map((blg) => (
+              <div
+                key={blg._id}
+                style={{
+                  margin: "15px 0",
+                  border: "1px solid grey",
+                  borderRadius: "10px",
+                }}
+              >
+                <Link href={`/blog/${blg.pageUrl}`}>
+                  <div style={{ display: "flex" }}>
+                    <Image
+                      src={
+                        blg?.images?.url || "/destination-img/kuala-lumpur.webp"
+                      }
+                      width={85}
+                      height={70}
+                      alt={"Image"}
+                      style={{
+                        borderTopLeftRadius: "10px",
+                        borderBottomLeftRadius: "10px",
+                      }}
+                    />
+                    <div style={{ marginLeft: "10px" }}>
+                      <p>{dayjs(blg.createdAt).format("MMM D, YYYY")}</p>
+                      <p>{truncateText(blg.heading, 65)}</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
