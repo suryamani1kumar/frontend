@@ -1,6 +1,5 @@
 import GlobalAttractions from "@/components/Homepage/Attractions/GlobalAttractions";
 import HomeBlog from "@/components/Homepage/HomeBlog";
-import SearchBar from "@/components/Search/SearchBar";
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
@@ -14,10 +13,41 @@ export const metadata = {
 
 export default async function HomePage() {
   return (
-    <div className="container">
-      <SearchBar />
-      <HomeBlog />
-      <GlobalAttractions />
+    <div>
+      <div className="Banners">
+        <div className="container">
+          <div
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              textAlign: "center",
+              width: "100%",
+            }}
+          >
+            <h1
+              style={{
+                fontSize: "32px",
+                fontWeight: "700",
+                color: "#ffffff",
+                lineHeight: "1.4",
+                letterSpacing: "1px",
+                textShadow: "0 4px 12px rgba(0,0,0,0.4)",
+                margin: 0,
+              }}
+            >
+              Adventure, excitement, and unforgettable experiences
+              <br />
+              all in one place!
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <HomeBlog />
+        <GlobalAttractions />
+      </div>
     </div>
   );
 }

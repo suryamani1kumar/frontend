@@ -75,7 +75,17 @@
   .BlogDetailsDescr ul {
     margin: 10px 0 10px 30px !important;
   }
-    .BlogDetails_recentblog{
+  .BlogDetails_recentblog {
     width: 30%;
+    height: max-content;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 25px;
+    background: white;
+  }
+  .recent_blog_list {
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 15px;
   }
 }

@@ -69,14 +69,7 @@ export default async function BlogDetailsPage({ params }) {
           <div className={styles.BlogDetails_recentblog}>
             <h5>Recent Blogs</h5>
             {bloglist.blog.map((blg) => (
-              <div
-                key={blg._id}
-                style={{
-                  margin: "15px 0",
-                  border: "1px solid grey",
-                  borderRadius: "10px",
-                }}
-              >
+              <div key={blg._id} className={styles.recent_blog_list}>
                 <Link href={`/blog/${blg.pageUrl}`}>
                   <div style={{ display: "flex" }}>
                     <Image
