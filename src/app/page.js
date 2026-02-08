@@ -1,3 +1,4 @@
+import Engine from "@/components/Engine/Engine";
 import GlobalAttractions from "@/components/Homepage/Attractions/GlobalAttractions";
 import HomeBlog from "@/components/Homepage/HomeBlog";
 
@@ -19,7 +20,7 @@ export default async function HomePage() {
           <div
             style={{
               position: "absolute",
-              top: "40%",
+              top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               textAlign: "center",
@@ -41,6 +42,7 @@ export default async function HomePage() {
               <br />
               all in one place!
             </h1>
+            <Engine/>
           </div>
         </div>
       </div>
