@@ -81,19 +81,6 @@ const Header = () => {
             <button className={styles?.signInButton}>sign in</button>
           </div>
         )}
-        <div className="flexcontainer">
-          {SearchIcon && (
-            <div className={styles.Headsearch} onClick={searchHandle}>
-              <IoSearchSharp />
-            </div>
-          )}
-
-          {device !== "Desktop" && (
-            <div className={styles.sideMenu} onClick={toggleDrawerOn}>
-              <IoMenu />
-            </div>
-          )}
-        </div>
       </div>
       {openDrawer && (
         <Drawer open={openDrawer} onClose={toggleDrawerOff}>
