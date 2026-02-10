@@ -1,3 +1,16 @@
+.heroImageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  .BlogDetails_Image {
+    border-radius: 12px;
+    max-height: 350px;
+    object-fit: cover;
+  }
+}
+
 .BlogDetails p {
   line-height: 1.6;
   text-align: justify;
@@ -9,11 +22,6 @@
 }
 .BlogDetailsDescr img {
   border-radius: 10px;
-}
-.BlogDetails_Image {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
 }
 .BlogHeading {
   font-size: 21px;
