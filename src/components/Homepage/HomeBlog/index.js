@@ -12,8 +12,11 @@ const HomeBlog = async () => {
 
   return (
     <div>
-      <div className="flexcontainer">
-        <h2 className={styles.Hm_Bl_heading}>Latest Blog</h2>
+      <div
+        className="flexcontainer"
+        style={{ margin: "40px 0 20px 0", fontWeight: "600", textAlign: "center" }}
+      >
+        <h2>Latest Blog</h2>
         <Link href={"/blog"}>View All</Link>
       </div>
 

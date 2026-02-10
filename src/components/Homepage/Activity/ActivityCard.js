@@ -12,11 +12,6 @@ export default function ActivityCard({ activity }) {
       <div className={styles.content}>
         <h3>{activity.title}</h3>
         <p className={styles.location}><TfiLocationPin/> {activity.location}</p>
-
-        <div className={styles.footer}>
-          <span className={styles.price}>From ₹{activity.price}</span>
-          <button className={styles.button}>Explore</button>
-        </div>
       </div>
     </div>
   );

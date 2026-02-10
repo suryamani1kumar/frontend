@@ -11,7 +11,6 @@ export default function DestinationCard({ destination }) {
 
       <div className={styles.overlay}>
         <h3>{destination.name}</h3>
-        <p>{destination.properties} properties</p>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { Rating } from "@mui/material";
 import styles from "./hotelCard.module.scss";
 import { TfiLocationPin } from "react-icons/tfi";
 
@@ -6,7 +7,6 @@ export default function HotelCard({ hotel }) {
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         <img src={hotel.image} alt={hotel.name} />
-        <span className={styles.price}>₹{hotel.price}/night</span>
       </div>
 
       <div className={styles.content}>
@@ -16,8 +16,13 @@ export default function HotelCard({ hotel }) {
         </p>
 
         <div className={styles.footer}>
-          <span className={styles.rating}>⭐ {hotel.rating}</span>
-          <button className={styles.button}>View Details</button>
+          <span className={styles.rating}>
+            <Rating
+              name="half-rating"
+              defaultValue={hotel.rating}
+              precision={0.5}
+            />{" "}
+          </span>
         </div>
       </div>
     </div>
