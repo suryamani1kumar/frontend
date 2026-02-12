@@ -1,0 +1,80 @@
+.header {
+  text-align: center;
+  margin: 40px 0;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    span {
+      color: #0d6efd;
+    }
+  }
+
+  p {
+    color: #6c757d;
+    max-width: 600px;
+    margin: 10px auto 0;
+  }
+}
+
+/* Wrapper makes all cards stack */
+.cardWrapper {
+  display: grid;
+  grid-template-columns: 1fr; // Mobile default (1 per row)
+  gap: 20px;
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr); // Small screens
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr); // Tablets
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr); // Desktop large screens
+  }
+}
+
+/* Individual Card */
+.card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.cardHead {
+  display: flex;
+  gap: 10px;
+  color: #2b4087;
+}
+
+.content {
+  p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin: 0;
+  }
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cardHead {
+    margin-bottom: 10px;
+  }
+}
