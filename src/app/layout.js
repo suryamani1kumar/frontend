@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Providers from "@/components/Provider/Providers";
-import TrackingPixel from "@/components/trackingpixel/TrackingPixel";
+// import TrackingPixel from "@/components/trackingpixel/TrackingPixel";
 import "@/styles/globals.css";
 
 export const dynamic = "force-dynamic"
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers>
           <Header />
-          <TrackingPixel />
+          // <TrackingPixel />
           <div className="overallMar">{children}</div>
           <Footer />
         </Providers>
