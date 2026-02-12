@@ -1,8 +1,10 @@
 User-agent: *
 
-allow: /
+Allow: /
+Disallow: /blog/
 
 Sitemap: https://www.tourmingle.com/sitemap.xml
+
 
 
 
