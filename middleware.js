@@ -9,6 +9,14 @@ const removedPaths = [
   "/the-top-luxury-villa-around-the-world",
   "/hotel-sky-sandton-vibrant-and-smart",
   "/terms-condition",
+  "/luxury-the-only-one-cape-town-65-foot-princess-yacht",
+  "/sky-villa-boutique-hotel-plettenberg-bay",
+  "/the-houghton-hotel-a-hidden-gem",
+  "/ebb-tide-apartments-in-camps-bay",
+  "/top-luxury-vacation-spots-in-the-world",
+  "/dmca",
+  "/discover-the-time-to-visit-the-okavango-delta",
+  "/in-the-name-of-love-top-anniversary-destinations"
 ];
 
 export function middleware(request) {
@@ -39,5 +47,13 @@ export const config = {
     "/the-top-luxury-villa-around-the-world",
     "/hotel-sky-sandton-vibrant-and-smart",
     "/terms-condition",
+    "/luxury-the-only-one-cape-town-65-foot-princess-yacht",
+    "/sky-villa-boutique-hotel-plettenberg-bay",
+    "/the-houghton-hotel-a-hidden-gem",
+    "/ebb-tide-apartments-in-camps-bay",
+    "/top-luxury-vacation-spots-in-the-world",
+    "/dmca",
+    "/discover-the-time-to-visit-the-okavango-delta",
+    "/in-the-name-of-love-top-anniversary-destinations"
   ],
 };
