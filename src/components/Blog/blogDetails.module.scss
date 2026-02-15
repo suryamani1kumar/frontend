@@ -1,105 +1,294 @@
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
 .heroImageContainer {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
+  .headingContainerMobile {
+    display: none;
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .BlogHeadingMobile {
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 18px;
+        font-weight: 800;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
   .BlogDetails_Image {
     border-radius: 12px;
     max-height: 350px;
     object-fit: cover;
-  }
-  .BlogHeading {
-    font-size: 35px;
-    font-weight: bolder;
-    max-width: 60%;
-  }
-}
-
-.BlogDetails p {
-  line-height: 1.6;
-  text-align: justify;
-  letter-spacing: 0.4px;
-  color: #565656;
-}
-.BlogDetails p strong {
-  color: #000000;
-}
-.BlogDetailsDescr img {
-  border-radius: 10px;
-  width:100%
-}
-.BlogHeading {
-  font-size: 21px;
-  font-weight: 600;
-}
-.BlogDetails h2 {
-  font-size: 19px;
-  font-weight: 600;
-}
-
-.BlogDetailsDescr ul {
-  display: block;
-  margin: 10px 0 10px 20px !important;
-}
-.BlogDetailsDescr ul li {
-  color: #565656 !important;
-  padding: 5px 0 !important;
-  white-space: normal !important;
-  word-break: break-word;
-  line-height: 1.6;
-  text-align: justify;
-  letter-spacing: 0.4px;
-}
-
-/* 2. Tablet (768px - 1024px) */
-@media screen and (min-width: 768px) {
-  .BlogDetails_Image {
-    height: 400px;
-  }
-  .BlogHeading {
-    font-size: 27px;
-    margin: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    @media (max-width: $breakpoint-tablet) {
+      max-height: 250px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      max-height: 200px;
+    }
   }
 }
 
-/* 3. Laptop & Desktop (1025px and above) */
-@media screen and (min-width: 1025px) {
-  .BlogDetails {
+.headingContainer {
+  display: flex;
+  align-items: flex-start;
+  padding: 0px 50px 0px 40px;
+  margin-top: 5px;
+  flex-direction: column;
+  gap: 10px;
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0px 20px;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0px 5px;
+    align-items: flex-start;
+  }
+  .headingContainerLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      flex-direction: column-reverse;
+      // gap: 10px;
+      margin-top: 4px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      flex-direction: column-reverse;
+      margin-top: 4px;
+    }
+    .BlogHeading {
+      font-size: 24px;
+      font-weight: 700;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 20px;
+        font-weight: 600;
+        display: none;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 10px;
+        display: none;
+      }
+    }
+    .socialMediaContainer {
+      display: flex;
+      gap: 15px;
+      @media (max-width: $breakpoint-tablet) {
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        gap: 8px;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .socialMediaIconsContainer {
+        display: flex;
+        gap: 15px;
+        @media (max-width: $breakpoint-tablet) {
+          gap: 10px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+          gap: 8px;
+        }
+        .socialMediaIcon {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+          transition: transform 0.2s ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+          }
+          @media (max-width: $breakpoint-tablet) {
+            width: 20px;
+            height: 20px;
+          }
+          @media (max-width: $breakpoint-mobile) {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      .mobileBlogInfo {
+        display: none;
+        @media (max-width: $breakpoint-tablet) {
+          display: flex;
+          gap: 15px;
+          font-size: 14px;
+          color: #565656;
+        }
+        @media (max-width: $breakpoint-mobile) {
+          display: flex;
+          gap: 10px;
+          font-size: 12px;
+          color: #565656;
+        }
+        .authorMobile {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+        }
+        .releaseDateMobile {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+  .blofInfo {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #565656;
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      display: none;
+    }
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .releaseDate {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+.BlogContentSection {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0px 20px;
+    margin-top: 5px;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0px 5px;
+    width: 100%;
+  }
+  .BlogDetailsDescr {
     width: 70%;
+    padding-left: 40px;
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      padding-left: 0px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      padding-left: 0px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 10px 0px;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 20px;
+        margin: 10px 0px;
+        font-weight: 600;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 18px;
+        margin: 8px 0px;
+        font-weight: 600;
+      }
+    }
+    p {
+      line-height: 1.5;
+      text-align: justify;
+      letter-spacing: 0.3px;
+      color: #565656;
+      font-size: 1.1rem;
+      font-weight: 500;
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+    img {
+      border-radius: 10px;
+      width: 100%;
+      max-height: 270px;
+      object-fit: cover;
+    }
+    ul {
+      display: block;
+      margin: 10px 0 10px 20px !important;
+      li {
+        color: #565656 !important;
+        padding: 5px 0 !important;
+        white-space: normal !important;
+        word-break: break-word;
+        line-height: 1.4;
+        text-align: justify;
+        letter-spacing: 0.3px;
+        font-size: 16px;
+        font-weight: 500;
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 14px;
+        }
+        @media (max-width: $breakpoint-mobile) {
+          font-size: 7rem;
+        }
+      }
+    }
   }
-  .BlogDetails_Image {
-    height: 500px;
-  }
-  .BlogHeading {
-    font-size: 27px;
-  }
-  .smallDescription {
-    margin: 15px 0px;
-    font-size: 16px;
-  }
-  .BlogDetails h2 {
-    font-size: 22px;
-    margin: 15px 0px;
-  }
-  .BlogDetails p,
-  .BlogDetailsDescr p {
-    font-size: 16px;
-  }
-  .BlogDetailsDescr ul {
-    margin: 10px 0 10px 30px !important;
-  }
-  .BlogDetails_recentblog {
-    width: 30%;
-    height: max-content;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 25px;
-    background: white;
-  }
-  .recent_blog_list {
-    border: 1px solid grey;
-    border-radius: 10px;
-    margin-top: 15px;
+  .otherBlogInfoSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 25%;
+    gap: 20px;
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+    }
   }
 }

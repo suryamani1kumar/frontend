@@ -44,7 +44,8 @@
   .contactSection {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between; for sometime
+    justify-content: center;
     align-items: flex-start;
     @media (max-width: $breakpoint-mobile) {
       flex-direction: column;

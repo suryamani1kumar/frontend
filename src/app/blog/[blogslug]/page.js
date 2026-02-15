@@ -39,7 +39,10 @@ export default async function BlogDetailsPage({ params }) {
   const { blogslug } = await params;
 
   const blog = await getBlogBySlug(blogslug);
-
+  const formattedDate = new Date(blog.blog.createdAt).toLocaleDateString(
+    "en-US",
+    { month: "short", day: "numeric", year: "numeric" },
+  );
   if (!blog.blog) {
     notFound();
   }
@@ -98,6 +101,10 @@ export default async function BlogDetailsPage({ params }) {
     //     </div>
     //   </div>
     // </>
-    <BlogDetailPageSection blog={blog} bloglist={bloglist} />
+    <BlogDetailPageSection
+      blog={blog}
+      bloglist={bloglist}
+      formattedDate={formattedDate}
+    />
   );
 }

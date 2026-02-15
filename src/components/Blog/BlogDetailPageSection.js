@@ -1,62 +1,78 @@
 import React from "react";
 import styles from "./blogDetails.module.scss";
 import Image from "next/image";
-import Link from "next/link";
-import dayjs from "dayjs";
-import { truncateText } from "@/utils/constants";
-const BlogDetailPageSection = ({ blog, bloglist }) => {
-  console.log("blog", blog);
+import dynamic from "next/dynamic";
+import {
+  FaCalendarDays,
+  FaCircleInfo,
+  FaFacebook,
+  FaSquareInstagram,
+  FaXTwitter,
+} from "react-icons/fa6";
+const RecentBlogSection = dynamic(
+  () => import("./RecentBlog/RecentBlogSection"),
+  {
+    loading: () => <div style={{ height: 400 }} />,
+  },
+);
+const BlogDetailPageSection = ({ blog, bloglist, formattedDate }) => {
   return (
     <>
       <div className="container">
         <div className={styles.heroImageContainer}>
-          <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
+          <div className={styles.headingContainerMobile}>
+            <h1 className={styles.BlogHeadingMobile}>{blog.blog.heading}</h1>
+          </div>
           <Image
             src={blog.blog?.images?.url || "/destination-img/kuala-lumpur.webp"}
             className={styles.BlogDetails_Image}
-            alt="kuala-lumpur"
-            width={800}
-            height={400}
+            alt={blog.blog.heading}
+            width={1100}
+            height={350}
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
         </div>
-        <div className={styles.BlogDetails_recentblog}>
-          <h5>Recent Blogs</h5>
-          {bloglist.blog.map((blg) => (
-            <div key={blg._id} className={styles.recent_blog_list}>
-              <Link href={`/blog/${blg.pageUrl}`}>
-                <div style={{ display: "flex" }}>
-                  <Image
-                    src={
-                      blg?.images?.url || "/destination-img/kuala-lumpur.webp"
-                    }
-                    width={85}
-                    height={70}
-                    alt={"Image"}
-                    style={{
-                      borderTopLeftRadius: "10px",
-                      borderBottomLeftRadius: "10px",
-                    }}
-                    priority
-                  />
-                  <div style={{ marginLeft: "10px" }}>
-                    <p>{dayjs(blg.createdAt).format("MMM D, YYYY")}</p>
-                    <p>{truncateText(blg.heading, 65)}</p>
-                  </div>
-                </div>
-              </Link>
+        <div className={styles?.headingContainer}>
+          <div className={styles.headingContainerLine}>
+            <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
+            <div className={styles.socialMediaContainer}>
+              <div className={styles.socialMediaIconsContainer}>
+                <FaFacebook className={styles.socialMediaIcon} />
+                <FaSquareInstagram className={styles.socialMediaIcon} />
+                <FaXTwitter className={styles.socialMediaIcon} />
+              </div>
+              <div className={styles.mobileBlogInfo}>
+                <p className={styles.authorMobile}>
+                  By<span>{blog.blog.author?.name}</span>
+                  <FaCircleInfo />
+                </p>
+                <p className={styles.releaseDateMobile}>
+                  {formattedDate}
+                  <FaCalendarDays />{" "}
+                </p>
+              </div>
             </div>
-          ))}
-        </div>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <div className={styles.BlogDetails}>
-            <p className={styles.smallDescription}>
-              {blog.blog.smallDescription}
+          </div>
+          <div className={styles.blofInfo}>
+            <p className={styles.author}>
+              By<span>{blog.blog.author?.name}</span>
+              <FaCircleInfo />
             </p>
-            <div
-              dangerouslySetInnerHTML={{ __html: blog.blog.content }}
-              className={styles.BlogDetailsDescr}
-            />
+            <p className={styles.releaseDate}>
+              {formattedDate}
+              <FaCalendarDays />{" "}
+            </p>
+          </div>
+        </div>
+        <div className={styles.BlogContentSection}>
+          <div
+            dangerouslySetInnerHTML={{ __html: blog.blog.content }}
+            className={styles.BlogDetailsDescr}
+          />
+          <div className={styles.otherBlogInfoSection}>
+            <RecentBlogSection bloglist={bloglist} />
           </div>
         </div>
       </div>

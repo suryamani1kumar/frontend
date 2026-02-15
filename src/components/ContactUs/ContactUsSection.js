@@ -21,7 +21,7 @@ const ContactUsSection = () => {
         <h1 className={styles.title}>Contact Us</h1>
         <div className={styles.contactSection}>
           <ContactUsForm />
-          <ContactInformation />
+          {/* <ContactInformation /> */}
         </div>
       </div>
     </div>
