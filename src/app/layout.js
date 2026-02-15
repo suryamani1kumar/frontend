@@ -4,7 +4,7 @@ import Providers from "@/components/Provider/Providers";
 import TrackingPixel from "@/components/trackingpixel/TrackingPixel";
 import "@/styles/globals.css";
 
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "My App",

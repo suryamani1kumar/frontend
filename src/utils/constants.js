@@ -13,12 +13,16 @@ export const NavBarItems = [
     name: "Blog",
     link: "/blog",
   },
+  {
+    id: 3,
+    name: "Contact",
+    link: "/contact-us",
+  },
 ];
 
 export const siteName = "TourMingle";
 export const primarySiteEmail = "info@tourmingle.com";
 export const primarySitePhone = "+1-000-000-0000";
-
 
 export function truncateText(text, maxLength = 80) {
   if (!text) return "";
