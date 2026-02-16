@@ -1,41 +1,13 @@
 import React from "react";
 import { FaTelegramPlane } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
-import { FaEnvelopeOpen } from "react-icons/fa";
 import styles from "./footer.module.scss";
 import Link from "next/link";
-import { email, siteName, tfn } from "@/utils/constants";
+import { siteName } from "@/utils/constants";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer_section}>
       <div className="container">
-        <div className={styles.footer_cta}>
-          <div className={styles.single_cta}>
-            <FaLocationDot />
-            <div className={styles.cta_text}>
-              <h4>Find us</h4>
-              <span>XXXX Avenue, sw XXXXX, chandigarh</span>
-            </div>
-          </div>
-
-          <div className={styles.single_cta}>
-            <FaPhone />
-            <div className={styles.cta_text}>
-              <h4>Call us</h4>
-              <Link href={`tel:${tfn}`}>{tfn}</Link>
-            </div>
-          </div>
-
-          <div className={styles.single_cta}>
-            <FaEnvelopeOpen />
-            <div className={styles.cta_text}>
-              <h4>Mail us</h4>
-              <Link href={`mailto:${email}`}>{email}</Link>
-            </div>
-          </div>
-        </div>
         <div className={styles.footer_content}>
           <div className={styles.footer_linklist}>
             <h3 className={styles.footer_heading}>Useful Links</h3>
