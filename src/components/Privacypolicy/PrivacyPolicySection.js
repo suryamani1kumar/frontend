@@ -137,13 +137,6 @@ const PrivacyPolicySection = () => {
               <a href={`mailto:${primarySiteEmail}`}>{primarySiteEmail}</a>
             </strong>
             <br />
-            Phone:{" "}
-            <strong>
-              <a href={`tel:${primarySitePhone}`}>{primarySitePhone}</a>
-            </strong>
-          </p>
-          <p className={styles.description}>
-            <em>Last Updated : January 31, 2026</em>
           </p>
         </div>
       </div>
