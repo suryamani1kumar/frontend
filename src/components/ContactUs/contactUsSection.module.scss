@@ -41,15 +41,4 @@
       margin-bottom: 2px;
     }
   }
-  .contactSection {
-    width: 100%;
-    display: flex;
-    // justify-content: space-between; for sometime
-    justify-content: center;
-    align-items: flex-start;
-    @media (max-width: $breakpoint-mobile) {
-      flex-direction: column;
-      gap: 15px;
-    }
-  }
 }
