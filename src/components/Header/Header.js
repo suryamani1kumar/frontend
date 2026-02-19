@@ -73,14 +73,13 @@ const Header = () => {
             ))}
           </ul>
         )}
-        {/* {device === "Desktop" && (
+        {device === "Desktop" && (
           <div className={styles?.sideItemContainer}>
             <div className={styles?.side_item_container}>
-              <IoGlobe /> <span></span>
+              <IoSearchSharp />
             </div>
-            <button className={styles?.signInButton}>sign in</button>
           </div>
-        )} */}
+        )}
       </div>
       {openDrawer && (
         <Drawer open={openDrawer} onClose={toggleDrawerOff}>

@@ -4,17 +4,21 @@ export const email = "info@tourmingle.com";
 export const NavBarItems = [
   {
     id: 1,
-    name: "About",
-    link: "/about-us",
+    name: "Home",
+    link: "/",
   },
-
   {
-    id: 2,
+    id: 3,
     name: "Blog",
     link: "/blog",
   },
   {
-    id: 3,
+    id: 2,
+    name: "About",
+    link: "/about-us",
+  },
+  {
+    id: 4,
     name: "Contact",
     link: "/contact-us",
   },

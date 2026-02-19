@@ -26,12 +26,6 @@ export default function WhyBookWithUs() {
       title: "Travel Tips & Ideas",
       text: "Get helpful blog articles to plan smarter trips.",
     },
-
-    {
-      icon: <FaHandshake />,
-      title: "Trusted Booking Links",
-      text: "We connect you with reliable travel partners for safe bookings.",
-    },
   ];
 
   return (
@@ -42,7 +36,7 @@ export default function WhyBookWithUs() {
         </h2>
         <p>
           Discover destinations, hotels, and activities with simple travel
-          guides and trusted booking links.
+          guides
         </p>
       </div>
 

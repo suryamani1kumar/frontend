@@ -85,7 +85,7 @@
   justify-content: center;
   padding: 12px 15px;
   font-size: 16px;
-  gap: 15px;
+  gap: 50px;
 }
 .desktop_menu_item li {
   cursor: pointer;
@@ -100,22 +100,6 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-.signInButton {
-  background-color: #212121;
-  color: #fff;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  text-align: center;
-  font-weight: bold;
-  text-transform: capitalize;
-  border: none;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: #434242;
-  }
 }
 .logo_inner_container {
   display: flex;

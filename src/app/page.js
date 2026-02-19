@@ -1,6 +1,5 @@
 import Engine from "@/components/Engine/Engine";
 import ActivityCard from "@/components/Homepage/Activity/ActivityCard";
-import GlobalAttractions from "@/components/Homepage/Attractions/GlobalAttractions";
 import DestinationCard from "@/components/Homepage/Destination/DestinationCard";
 import HomeBlog from "@/components/Homepage/HomeBlog";
 import HotelCard from "@/components/Homepage/Hotels/HotelCard";
@@ -201,17 +200,7 @@ export default async function HomePage() {
         </div>
         <WhyBookWithUs />
         <HomeBlog />
-        <h2
-          style={{
-            fontSize: "23px",
-            margin: "40px 0",
-            fontWeight: "600",
-            textAlign: "center",
-          }}
-        >
-          Top Attraction
-        </h2>
-        <GlobalAttractions />
+
       </div>
     </div>
   );
