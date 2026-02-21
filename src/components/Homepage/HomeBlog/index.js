@@ -28,6 +28,7 @@ const HomeBlog = async () => {
           <div className={styles.blogList}>
             {blog.blog.map((item, i) => (
               <Card
+                key={item.pageUrl}
                 url={`/blog/${item.pageUrl}`}
                 img={item.images?.url || "/destination-img/kuala-lumpur.webp"}
                 heading={truncateText(item.heading, 60)}

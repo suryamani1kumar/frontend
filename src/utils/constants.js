@@ -8,7 +8,7 @@ export const NavBarItems = [
     link: "/",
   },
   {
-    id: 3,
+    id: 2,
     name: "Blog",
     link: "/blog",
   },
@@ -18,12 +18,12 @@ export const NavBarItems = [
     link: "/destinations",
   },
   {
-    id: 2,
+    id: 4,
     name: "About",
     link: "/about-us",
   },
   {
-    id: 4,
+    id: 5,
     name: "Contact",
     link: "/contact-us",
   },

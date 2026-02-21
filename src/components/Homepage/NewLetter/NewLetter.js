@@ -1,26 +1,30 @@
+"use client";
 import React from "react";
-
+import styles from "./NewsLetter.module.scss";
 const NewLetter = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="container">
-      <div className="my-10">
-        <h4 className="text-center">NewsLetter</h4>
-        <p className="text-center">
+      <div className={styles.newLetterSection}>
+        <h4 className={styles.newLetterHeading}>News Letter</h4>
+        <p className={styles.newLetterSubHeading}>
           Join our newsletter to get fresh travel guides, expert tips, and new
           blog updates delivered straight to your inbox.
         </p>
         <div className="flex justify-center p-4">
-        <input
-          id="email"
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          className="rounded me-2 w-80 py-2 px-4"
-        />
-
-        <button className="rounded py-2 px-4 bg-blue-700 text-white">Subscribe</button>
+          <form className={styles.formSection} onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className={styles.input}
+            />
+            <button type="submit" className={styles.button}>
+              Subscribe
+            </button>
+          </form>
         </div>
-
       </div>
     </div>
   );

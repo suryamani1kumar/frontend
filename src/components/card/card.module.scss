@@ -1,3 +1,4 @@
+@use "../../styles/variables" as *;
 .card {
   flex: 0 0 auto;
   // width: 250px;
@@ -36,7 +37,7 @@
   }
 
   .readMore {
-    color: red;
+    color: $secondary-theme-color;
     cursor: pointer;
     font-weight: bold;
   }

@@ -25,8 +25,6 @@ const Header = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [continent, setContinent] = useState([]);
   const [country, setCountry] = useState([]);
-  console.log("continent", continent);
-  console.log("country", country);
   const toggleDrawerOn = () => {
     setOpenDrawer(true);
   };
@@ -83,17 +81,14 @@ const Header = () => {
 
                     <ul className={styles.submenu}>
                       {continent.map((conn) => (
-                        <li className={styles.submenuItem}>
+                        <li className={styles.submenuItem} key={conn.name}>
                           {conn.name}
-                          {console.log(conn)}
+
                           <ul className={styles.submenuInner}>
                             {country
                               .filter((item) => item.parent === conn._id)
                               .map((country) => (
-                                <li>
-                                  {console.log("country", country.parent)}
-                                  {country.name}
-                                </li>
+                                <li key={country.name}>{country.name}</li>
                               ))}
                           </ul>
                         </li>
