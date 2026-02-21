@@ -12,14 +12,21 @@ import Drawer from "@mui/material/Drawer";
 import { useDispatch, useSelector } from "react-redux";
 import { SearchEnable } from "@/redux/reducers/moblieSearchSlice";
 import { NavBarItems } from "@/utils/constants";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+import { axiosInstance } from "@/service/axiosInstance";
+import { LuSquareMenu } from "react-icons/lu";
+
 const Header = () => {
   const SearchIcon = useSelector((state) => state.toggleSearchIcon); // Get the toggle state from the store
-  const router = useRouter();
+  const pathname = usePathname();
   const sticky = useStickyHeader(40);
   const device = useDeviceType();
   const dispatch = useDispatch();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [continent, setContinent] = useState([]);
+  const [country, setCountry] = useState([]);
+  console.log("continent", continent);
+  console.log("country", country);
   const toggleDrawerOn = () => {
     setOpenDrawer(true);
   };
@@ -27,24 +34,18 @@ const Header = () => {
     setOpenDrawer(false);
   };
 
-  // useEffect(() => {
-  //   router.events.on("routeChangeComplete", toggleDrawerOff);
-  //   return () => {
-  //     router.events.off("routeChangeComplete", toggleDrawerOff);
-  //   };
-  // }, [router]);
+  useEffect(() => {
+    toggleDrawerOff();
+  }, [pathname]);
 
-  const searchHandle = () => {
-    if (device === "Mobile") {
-      dispatch(SearchEnable(true));
-      return;
-    }
-
-    if (device === "Desktop" || device === "Tablet") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-  };
+  useEffect(() => {
+    axiosInstance
+      .get("getLocationsByType?type=continent")
+      .then((res) => setContinent(res.data.locations));
+    axiosInstance
+      .get("getLocationsByType?type=country")
+      .then((res) => setCountry(res.data.locations));
+  }, []);
 
   return (
     <header
@@ -68,7 +69,40 @@ const Header = () => {
           <ul className={styles?.desktop_menu_item}>
             {NavBarItems.map((item) => (
               <Link href={item?.link} key={item.id}>
-                <li>{item?.name}</li>
+                {item?.link === "/destinations" ? (
+                  <li
+                    className={styles.menuItem}
+                    onMouseEnter={() => {
+                      console.log("first");
+                    }}
+                    onMouseOut={() => {
+                      console.log("out");
+                    }}
+                  >
+                    {item?.name}
+
+                    <ul className={styles.submenu}>
+                      {continent.map((conn) => (
+                        <li className={styles.submenuItem}>
+                          {conn.name}
+                          {console.log(conn)}
+                          <ul className={styles.submenuInner}>
+                            {country
+                              .filter((item) => item.parent === conn._id)
+                              .map((country) => (
+                                <li>
+                                  {console.log("country", country.parent)}
+                                  {country.name}
+                                </li>
+                              ))}
+                          </ul>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li>{item?.name}</li>
+                )}
               </Link>
             ))}
           </ul>
@@ -80,22 +114,38 @@ const Header = () => {
             </div>
           </div>
         )}
+        {device !== "Desktop" && (
+          <div
+            onClick={toggleDrawerOn}
+            style={{ width: "25px", height: "25px" }}
+          >
+            <LuSquareMenu style={{ width: "100%", height: "100%" }} />
+          </div>
+        )}
       </div>
       {openDrawer && (
         <Drawer open={openDrawer} onClose={toggleDrawerOff}>
           <div className={styles.menu_container}>
             <div className={styles.menu_header}>
               <Link href={"/"}>
-                <Image src={"/logo.png"} alt="logo" width={30} height={30} />
+                <Image
+                  src={"/logo.png"}
+                  alt="logo"
+                  width={180}
+                  height={35}
+                  style={{ height: "35px" }}
+                />
               </Link>
               <span className={styles.close_btn} onClick={toggleDrawerOff}>
                 &times;
               </span>
             </div>
             <ul className={styles.menu_list}>
-              <li className={styles.menu_item}>
-                <Link href={"/blog"}>Blog</Link>
-              </li>
+              {NavBarItems.map((item) => (
+                <Link href={item?.link} key={item.id}>
+                  <li className={styles.menu_item}>{item?.name}</li>
+                </Link>
+              ))}
             </ul>
           </div>
         </Drawer>

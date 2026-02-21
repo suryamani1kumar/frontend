@@ -1,7 +1,7 @@
 "use client";
 import { useDeviceType } from "@/hooks/useDevicetype";
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./attracard.module.scss";
+import styles from "./carosuel.module.scss";
 import classNames from "classnames";
 
 const Carousel = ({ children }) => {

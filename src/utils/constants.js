@@ -13,6 +13,11 @@ export const NavBarItems = [
     link: "/blog",
   },
   {
+    id: 3,
+    name: "Destinations",
+    link: "/destinations",
+  },
+  {
     id: 2,
     name: "About",
     link: "/about-us",

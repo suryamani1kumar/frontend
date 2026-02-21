@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import NewLetter from "@/components/Homepage/NewLetter/NewLetter";
 import Providers from "@/components/Provider/Providers";
 import "@/styles/globals.css";
 
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Header />
           <div className="overallMar">{children}</div>
+          <NewLetter />
           <Footer />
         </Providers>
       </body>
