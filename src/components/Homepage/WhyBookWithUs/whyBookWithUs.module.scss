@@ -54,9 +54,12 @@
 }
 
 .cardHead {
-  display: flex;
-  gap: 10px;
   color: #2b4087;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 .content {
