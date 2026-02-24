@@ -74,20 +74,20 @@ export default async function HomePage() {
         >
           {[
             {
-              name: "Jaipur",
-              image: "/destination-img/kuala-lumpur.webp",
+              name: "Europe",
+              image: "/destination-img/europe.webp",
             },
             {
               name: "Kerala (Munnar & Alleppey)",
               image: "/india-visit/backwaters-of-alleppey.webp",
             },
             {
-              name: "Manali, Himachal Pradesh",
-              image: "/destination-img/kuala-lumpur.webp",
+              name: "Middle East",
+              image: "/destination-img/middle-east.webp",
             },
             {
-              name: "Varanasi, Uttar Pradesh",
-              image: "/destination-img/kuala-lumpur.webp",
+              name: "Africa",
+              image: "/destination-img/africa.webp",
             },
           ].map((d, i) => (
             <DestinationCard key={i} destination={d} />
