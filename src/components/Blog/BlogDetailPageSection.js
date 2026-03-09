@@ -9,10 +9,7 @@ import {
   FaSquareInstagram,
   FaXTwitter,
 } from "react-icons/fa6";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import { MdExpandMore } from "react-icons/md";
+import Faq from "../Faq/Faq";
 
 const RecentBlogSection = dynamic(
   () => import("./RecentBlog/RecentBlogSection"),
@@ -40,7 +37,16 @@ const BlogDetailPageSection = ({ blog, bloglist, formattedDate }) => {
       </div>
       <div className={styles?.headingContainer}>
         <div className={styles.headingContainerLine}>
-          <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
+          <div className={styles.blofInfo}>
+            <p className={styles.author}>
+              By<span>{blog.blog.author?.name}</span>
+              <FaCircleInfo />
+            </p>
+            <p className={styles.releaseDate}>
+              {formattedDate}
+              <FaCalendarDays />{" "}
+            </p>
+          </div>
           <div className={styles.socialMediaContainer}>
             <div className={styles.socialMediaIconsContainer}>
               <FaFacebook className={styles.socialMediaIcon} />
@@ -59,41 +65,19 @@ const BlogDetailPageSection = ({ blog, bloglist, formattedDate }) => {
             </div>
           </div>
         </div>
-        <div className={styles.blofInfo}>
-          <p className={styles.author}>
-            By<span>{blog.blog.author?.name}</span>
-            <FaCircleInfo />
-          </p>
-          <p className={styles.releaseDate}>
-            {formattedDate}
-            <FaCalendarDays />{" "}
-          </p>
-        </div>
+
+        <h1 className={styles.BlogHeading}>{blog.blog.heading}</h1>
       </div>
       <div className={styles.BlogContentSection}>
-        <div
-          dangerouslySetInnerHTML={{ __html: blog.blog.content }}
-          className={styles.BlogDetailsDescr}
-        />
+        <div className={styles.BlogDetailsDescr}>
+          <div dangerouslySetInnerHTML={{ __html: blog.blog.content }} />
+          {blog.blog.faqs.length > 0 && <Faq faqs={blog.blog.faqs} />}
+        </div>
+
         <div className={styles.otherBlogInfoSection}>
           <RecentBlogSection bloglist={bloglist} />
         </div>
       </div>
-      {blog.blog.faqs.map((faq, index) => (
-        <Accordion key={index} defaultExpanded={index === 0}>
-          <AccordionSummary
-            expandIcon={<MdExpandMore />}
-            aria-controls={`panel${index}-content`}
-            id={`panel${index}-header`}
-          >
-            <p>{faq.ques}</p>
-          </AccordionSummary>
-
-          <AccordionDetails>
-            <p dangerouslySetInnerHTML={{ __html: faq.ans }} />
-          </AccordionDetails>
-        </Accordion>
-      ))}
     </div>
   );
 };
