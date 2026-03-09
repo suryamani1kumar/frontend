@@ -1,7 +1,3 @@
-
-export const tfn = "+1-000-000-0000";
-export const email = "info@tourmingle.com";
-
 export const NavBarItems = [
   {
     id: 1,
@@ -13,11 +9,11 @@ export const NavBarItems = [
     name: "Blog",
     link: "/blog",
   },
-  {
-    id: 3,
-    name: "Destinations",
-    link: "/destinations",
-  },
+  // {
+  //   id: 3,
+  //   name: "Destinations",
+  //   link: "/destinations",
+  // },
   {
     id: 4,
     name: "About",
