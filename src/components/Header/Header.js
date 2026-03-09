@@ -36,14 +36,14 @@ const Header = () => {
     toggleDrawerOff();
   }, [pathname]);
 
-  useEffect(() => {
-    axiosInstance
-      .get("getLocationsByType?type=continent")
-      .then((res) => setContinent(res.data.locations));
-    axiosInstance
-      .get("getLocationsByType?type=country")
-      .then((res) => setCountry(res.data.locations));
-  }, []);
+  // useEffect(() => {
+  //   axiosInstance
+  //     .get("getLocationsByType?type=continent")
+  //     .then((res) => setContinent(res.data.locations));
+  //   axiosInstance
+  //     .get("getLocationsByType?type=country")
+  //     .then((res) => setCountry(res.data.locations));
+  // }, []);
 
   return (
     <header
@@ -70,28 +70,30 @@ const Header = () => {
                 {item?.link === "/destinations" ? (
                   <li
                     className={styles.menuItem}
-                    onMouseEnter={() => {
-                      console.log("first");
-                    }}
-                    onMouseOut={() => {
-                      console.log("out");
-                    }}
                   >
                     {item?.name}
-
                     <ul className={styles.submenu}>
                       {continent.map((conn) => (
-                        <li className={styles.submenuItem} key={conn.name}>
-                          {conn.name}
-
-                          <ul className={styles.submenuInner}>
-                            {country
-                              .filter((item) => item.parent === conn._id)
-                              .map((country) => (
-                                <li key={country.name}>{country.name}</li>
-                              ))}
-                          </ul>
-                        </li>
+                        <Link
+                          href={`/destinations/${conn.slug}`}
+                          key={conn.name}
+                        >
+                          <li className={styles.submenuItem}>
+                            {conn.name}
+                            <ul className={styles.submenuInner}>
+                              {country
+                                .filter((item) => item.parent === conn._id)
+                                .map((country) => (
+                                  <Link
+                                    key={country.name}
+                                    href={`/destinations/${conn.slug}/${country.slug}`}
+                                  >
+                                    <li>{country.name}</li>
+                                  </Link>
+                                ))}
+                            </ul>
+                          </li>
+                        </Link>
                       ))}
                     </ul>
                   </li>
