@@ -1,0 +1,127 @@
+.hero {
+  background-image: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('/destination-img/europe.webp');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.heroContent h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.heroContent p {
+  margin-top: 12px;
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.intro h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.intro p {
+  color: #555;
+  font-size: 1rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+}
+
+.image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 16px;
+  text-align: center;
+}
+
+.cardContent h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.recent {
+  margin-top: 40px;
+}
+
+.recent h2 {
+  text-align: left;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.recentList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.recentCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.recentCard:hover {
+  transform: translateY(-4px);
+}
+
+.recentImage {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.recentContent {
+  padding: 12px;
+}
+
+.recentContent h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.recentContent p {
+  margin: 0;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
