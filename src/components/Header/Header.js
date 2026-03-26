@@ -36,14 +36,14 @@ const Header = () => {
     toggleDrawerOff();
   }, [pathname]);
 
-  // useEffect(() => {
-  //   axiosInstance
-  //     .get("getLocationsByType?type=continent")
-  //     .then((res) => setContinent(res.data.locations));
-  //   axiosInstance
-  //     .get("getLocationsByType?type=country")
-  //     .then((res) => setCountry(res.data.locations));
-  // }, []);
+  useEffect(() => {
+    axiosInstance
+      .get("getLocationsByType?type=continent")
+      .then((res) => setContinent(res.data.locations));
+    axiosInstance
+      .get("getLocationsByType?type=country")
+      .then((res) => setCountry(res.data.locations));
+  }, []);
 
   return (
     <header
@@ -75,7 +75,7 @@ const Header = () => {
                     <ul className={styles.submenu}>
                       {continent.map((conn) => (
                         <Link
-                          href={`/destinations/${conn.slug}`}
+                          href={`/destinations/${conn.slug.trim()}`}
                           key={conn.name}
                         >
                           <li className={styles.submenuItem}>
@@ -86,7 +86,7 @@ const Header = () => {
                                 .map((country) => (
                                   <Link
                                     key={country.name}
-                                    href={`/destinations/${conn.slug}/${country.slug}`}
+                                    href={`/destinations/${conn.slug.trim()}/${country.slug.trim()}`}
                                   >
                                     <li>{country.name}</li>
                                   </Link>
