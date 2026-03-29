@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./termsConditionSection.module.scss";
 import Image from "next/image";
 import { primarySiteEmail, siteName } from "@/utils/constants";
+import Link from "next/link";
 const TermsCondtionSection = () => {
   return (
     <div className="container">
@@ -19,174 +20,120 @@ const TermsCondtionSection = () => {
         </div>
         <div className={styles.contentSection}>
           <h1 className={styles.title}>Terms and Conditions</h1>
+          <h2>Introduction</h2>
           <p className={styles.description}>
-            Welcome to {siteName}. By accessing or using our website, you agree
-            to comply with and be bound by the following Terms and Conditions.
-            Please read them carefully before using our services.
+            Salutations to our precious readers! Before exploring our platform,
+            we would like you to take a moment to go through these Terms &
+            Conditions. These terms exist so that you have a clear understanding
+            of what Tourmingle is, how it works, and what you can expect when
+            you visit us. Throughout this document, references to "
+            <Link href="/">{siteName}</Link>," "we," and "our" mean
+            Tourmingle, while "you," "your," and "users" refer to anyone reading
+            or browsing our website. Going through this page will give you a
+            proper sense of what we stand for and what we ask of our readers in
+            return. Carrying on with your visit means you are comfortable with
+            everything written here. If anything does not feel right to you, we
+            would kindly ask that you step away from the platform.
           </p>
-          <h2 className={styles.childTitle}>1. About Us</h2>
+          <h2 className={styles.childTitle}>What We Offer</h2>
           <p className={styles.description}>
-            {siteName} is an online travel information and booking platform that
-            currently provides travel-related content, blogs, guides, and
-            informational resources. In the future, our platform may include
-            services such as flight bookings, hotel reservations, tourist
-            attraction tickets, and guide bookings.
+            Tourmingle is a travel blog, plain and simple. We put together
+            destination guides, travel tips, cultural pieces, and articles that
+            we genuinely hope make travel feel more accessible and exciting for
+            everyone who reads them. What we are not is a travel agency or a
+            booking service. We do not sell tickets, arrange hotels, or handle
+            any kind of transaction. There are no user accounts to create, no
+            forms to fill out, and no data to submit anywhere on our platform.
+            When you visit Tourmingle, you are here to read, and that is the
+            only thing we will ever ask of you.
           </p>
-          <h2 className={styles.childTitle}>2. Acceptance of Terms</h2>
+          <h2 className={styles.childTitle}>Accuracy of Information</h2>
           <p className={styles.description}>
-            By accessing this website, you confirm that you are at least 18
-            years old and agree to these Terms and Conditions. If you do not
-            agree, please discontinue using the website.
+            Every article on Tourmingle is written with care and a genuine
+            intention to be helpful and accurate. That said, travel is a moving
+            target. Things change quickly out in the world, and what was true
+            when an article was written may not reflect the situation on the
+            ground today. A few situations where this can happen include the
+            following:
           </p>
-          <h2 className={styles.childTitle}>3. Use of Website Content</h2>
-          <p className={styles.description}>
-            All content published on <strong>{siteName}</strong>, including
-            articles, travel guides, images, graphics, logos, and text, is{" "}
-            <strong>for informational purposes only.</strong>
-          </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              You may not copy, reproduce, distribute, or modify any content
-              without prior written permission.
+          <ul>
+            <li>
+              If visa rules, entry requirements, or travel regulations at a
+              particular destination have been recently changed or updated by
+              the relevant authorities.
             </li>
-            <li className={styles.listingContent}>
-              Content is provided “as is” and may be updated or changed without
-              notice.
+            <li>
+              If a destination is going through political shifts, environmental
+              changes, or safety related developments that may affect the
+              experience of travellers visiting that place.
             </li>
-          </ul>
-          <h2 className={styles.childTitle}>
-            4. Travel Information Disclaimer
-          </h2>
-          <p className={styles.description}>
-            Travel information such as prices, availability, itineraries,
-            destinations, and recommendations may change at any time.
-          </p>
-          <p className={styles.description}>
-            <strong>{siteName}</strong> does not guarantee the accuracy,
-            completeness, or reliability of any travel information published on
-            the website.
-          </p>
-          <p className={styles.description}>
-            Users are advised to verify details directly with airlines, hotels,
-            tour operators, or service providers before making travel decisions.
-          </p>
-          <h2 className={styles.childTitle}>5. Future Booking Services</h2>
-          <p className={styles.description}>
-            In the future, <strong>{siteName}</strong> may offer:
-          </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>Flight search and booking</li>
-            <li className={styles.listingContent}>Hotel reservations</li>
-            <li className={styles.listingContent}>
-              Tourist attraction tickets
-            </li>
-            <li className={styles.listingContent}>
-              Travel guide or tour bookings
+            <li>
+              If prices, availability, or any operational details mentioned
+              within an article have shifted since the piece was originally
+              written and published.
             </li>
           </ul>
           <p className={styles.description}>
-            When these services become available:
+            We always encourage our readers to double check anything important
+            through official government portals, embassy websites, or by
+            speaking with a licensed travel professional before making real
+            plans. Tourmingle puts its content out in good faith, but we cannot
+            take responsibility for decisions made purely on the basis of what
+            you read here.
           </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Additional terms may apply.
-            </li>
-            <li className={styles.listingContent}>
-              Payments may be processed via third-party providers.
-            </li>
-            <li className={styles.listingContent}>
-              <strong>{siteName}</strong> may act only as an intermediary
-              between users and service providers
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>6. Third-Party Links & Services</h2>
+          <h2 className={styles.childTitle}>Intellectual Property</h2>
           <p className={styles.description}>
-            Our website may contain links to third-party websites or services.
+            Everything on Tourmingle, from the articles and photographs to the
+            illustrations and design, has been created with time, thought, and
+            genuine effort. It belongs to us or to the contributors behind it,
+            and it is protected under copyright law. You are more than welcome
+            to share a link to any piece you enjoy, or quote a short passage as
+            long as you give us credit and link back to the original. What we do
+            ask is that you do not copy full articles and publish them
+            elsewhere, use our content to make money without having a
+            conversation with us first, or use any kind of automated tool to
+            scrape or duplicate content from our platform.
           </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              We do not control or endorse third-party content.
-            </li>
-            <li className={styles.listingContent}>
-              We are not responsible for any loss or damage caused by
-              third-party services
-            </li>
-            <li className={styles.listingContent}>
-              Users access third-party websites at their own risk
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>7. User Responsibilities</h2>
+
+          <h2 className={styles.childTitle}>External Links</h2>
           <p className={styles.description}>
-            By using this website, you agree:
+            Some of our articles include links pointing toward other websites,
+            added purely so our readers can explore a topic further if they wish
+            to. We have no control over those external websites, how they are
+            run, or what their policies say. Clicking on one of those links is
+            entirely your own decision, and we would encourage you to take a
+            quick look at the terms and privacy policy of any site you end up
+            on. We hold no responsibility for anything that happens as a result
+            of visiting a website linked from ours, and the fact that a link
+            appears on our platform does not mean we are endorsing that website
+            or anything it contains.
           </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Not to misuse or attempt to disrupt the website
-            </li>
-            <li className={styles.listingContent}>
-              Not to submit false or misleading information
-            </li>
-            <li className={styles.listingContent}>
-              Not to engage in illegal or harmful activities
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>8. Intellectual Property Rights</h2>
+
+          <h2 className={styles.childTitle}>Limitation of Liability</h2>
           <p className={styles.description}>
-            All intellectual property rights related to this website belong to
-            <strong>{siteName}</strong> unless otherwise stated.
+            We do everything we can to keep Tourmingle accurate, useful, and
+            running well. But as an informational platform, we have to be clear
+            that things can occasionally go wrong, and our responsibility has
+            its limits. Tourmingle, along with its owners, editors, writers, and
+            contributors, cannot be held liable for any inconvenience, loss, or
+            damage that comes from using our platform, trusting our content for
+            a significant decision, any downtime or disruption to the website,
+            or any mistakes or gaps in the material we publish. The platform is
+            made available as it is, and while we are always working to improve
+            it, we cannot promise it will be flawless at every moment.
           </p>
+
+          <h2 className={styles.childTitle}>Changes to Terms & Conditions</h2>
           <p className={styles.description}>
-            Unauthorized use of our trademarks, branding, or content is strictly
-            prohibited.
-          </p>
-          <h2 className={styles.childTitle}>9. Limitation of Liability</h2>
-          <p className={styles.description}>
-            To the maximum extent permitted by law, <strong>{siteName}</strong>{" "}
-            shall not be liable for:
-          </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Any direct or indirect losses
-            </li>
-            <li className={styles.listingContent}>
-              Travel disruptions or cancellations
-            </li>
-            <li className={styles.listingContent}>
-              Errors in pricing, availability, or content
-            </li>
-            <li className={styles.listingContent}>
-              Losses caused by third-party providers
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>10. Privacy Policy</h2>
-          <p className={styles.description}>
-            Your use of this website is also governed by our Privacy Policy,
-            which explains how we collect, use, and protect your data.
-          </p>
-          <h2 className={styles.childTitle}>11. Modifications to Terms</h2>
-          <p className={styles.description}>
-            We reserve the right to update or modify these Terms and Conditions
-            at any time. Changes will be effective immediately upon posting.
-          </p>
-          <p className={styles.description}>
-            Continued use of the website indicates acceptance of the updated
-            terms.
-          </p>
-          <h2 className={styles.childTitle}>12. Governing Law</h2>
-          <p className={styles.description}>
-            These Terms and Conditions shall be governed by and interpreted in
-            accordance with the laws of India.
-          </p>
-          <h2 className={styles.childTitle}>13. Contact Information</h2>
-          <p className={styles.description}>
-            For any questions regarding these Terms and Conditions, please
-            contact us at:
-          </p>
-          <p className={styles.description}>
-            Email:{" "}
-            <strong>
-              <a href={`mailto:${primarySiteEmail}`}>{primarySiteEmail}</a>
-            </strong>
+            These Terms & Conditions may be revised and updated from time to
+            time as Tourmingle continues to grow. Whenever that happens, the
+            updated version will go live on this page right away. We suggest
+            coming back to check this page every now and then so nothing takes
+            you by surprise. If the changes are significant, we will make sure
+            to highlight them clearly on the website. For any questions or
+            concerns about anything written here, please feel free to write to
+            us at <Link href="mailto:info@tourmingle.com">info@tourmingle.com</Link> and we will get back to you as soon as we
+            possibly can.
           </p>
         </div>
       </div>
