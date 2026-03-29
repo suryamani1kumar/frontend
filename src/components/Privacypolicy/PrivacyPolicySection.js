@@ -6,6 +6,7 @@ import {
   primarySitePhone,
   siteName,
 } from "@/utils/constants";
+import Link from "next/link";
 const PrivacyPolicySection = () => {
   return (
     <div className="container">
@@ -24,119 +25,107 @@ const PrivacyPolicySection = () => {
         <div className={styles.contentSection}>
           <h1 className={styles.title}>Privacy Policy</h1>
           <p className={styles.description}>
-            At <strong>{siteName}</strong>, your privacy is our top priority.
-            This Privacy Policy explains how we collect, use, and protect your
-            personal information when you visit our website, use our services,
-            or interact with us online.
+            Welcome to Tourmingle! We are glad you took a moment to read through
+            our Privacy Policy. This document is here to give you a complete and
+            honest picture of how we approach your privacy while you are
+            browsing our platform. Throughout this document, "
+            <Link href="/">{siteName}</Link>," "we," and "our" refer to
+            Tourmingle, while "you," "your," and "users" refer to you as someone
+            visiting our website. Reading through this page will help you
+            understand exactly where we stand when it comes to your personal
+            information. By continuing to use our platform, you are indicating
+            that you are comfortable with the terms laid out here. If anything
+            does not sit well with you, we would ask that you refrain from using
+            the platform.
           </p>
-          <h2 className={styles.childTitle}>1. Information We Collect</h2>
-          <p className={styles.description}>
-            We may collect the following information to provide a better user
-            experience and improve our services:
-          </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              <strong>Personal Information:</strong> Name, email address, phone
-              number, billing information (when applicable).
-            </li>
-            <li className={styles.listingContent}>
-              <strong>Non-Personal Information:</strong> IP address, browser
-              type, operating system, pages visited, and time spent on our
-              website.
-            </li>
-            <li className={styles.listingContent}>
-              <strong>Cookies and Tracking:</strong> We use cookies and similar
-              technologies to enhance website performance and track user
-              behavior.
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>2. How We Use Your Information</h2>
-          <p className={styles.description}>Your information helps us:</p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Provide and maintain our services
-            </li>
-            <li className={styles.listingContent}>
-              Improve user experience and website performance
-            </li>
-            <li className={styles.listingContent}>
-              Send updates, newsletters, and promotional offers (only if
-              opted-in)
-            </li>
-            <li className={styles.listingContent}>
-              Ensure security and prevent fraudulent activities
-            </li>
-          </ul>
           <h2 className={styles.childTitle}>
-            3. How We Protect Your Information
+            How We Do Not Use Your Information
           </h2>
           <p className={styles.description}>
-            We adopt industry-standard measures to safeguard your data,
-            including:
-          </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Secure servers and encryption protocols
-            </li>
-            <li className={styles.listingContent}>Regular security audits</li>
-            <li className={styles.listingContent}>
-              Limited access to personal data by authorized personnel only
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>4. Sharing of Information</h2>
-          <p className={styles.description}>
-            We do not sell, trade, or rent your personal information to third
-            parties. We may share your information with:
-          </p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Trusted service providers who assist in operating our website and
-              providing services
-            </li>
-            <li className={styles.listingContent}>
-              Legal authorities if required by law or to protect our rights
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>5. Your Rights</h2>
-          <p className={styles.description}>You have the right to:</p>
-          <ul className={styles.listing}>
-            <li className={styles.listingContent}>
-              Access and update your personal information
-            </li>
-            <li className={styles.listingContent}>
-              Request deletion of your data
-            </li>
-            <li className={styles.listingContent}>
-              Opt-out of marketing communications
-            </li>
-          </ul>
-          <h2 className={styles.childTitle}>6. Third-Party Links</h2>
-          <p className={styles.description}>
-            Our website may contain links to external sites. We are not
-            responsible for the privacy practices or content of those websites.
-            Please review their privacy policies separately.
+            Since we collect nothing from our readers, we naturally use nothing
+            either. We do not send out promotional emails or push notifications,
+            we do not serve targeted advertisements based on how you browse, we
+            do not pass your information along to any third-party partners or
+            affiliates, we do not build profiles or databases based on user
+            behaviour, and we do not reach out to our readers for marketing
+            purposes of any kind. Your time on Tourmingle is entirely your own,
+            from the moment you arrive to the moment you leave.
           </p>
 
-          <h2 className={styles.childTitle}>
-            7. Changes to This Privacy Policy
-          </h2>
+          <h2 className={styles.childTitle}>Cookies</h2>
           <p className={styles.description}>
-            We may update this Privacy Policy periodically. Any changes will be
-            reflected on this page with the <strong>last updated</strong> date.
-            We encourage you to review this policy regularly.
+            It is possible that when you visit Tourmingle, standard browser
+            cookies are used in a limited and anonymous way to help us
+            understand how the website is being used and to keep things running
+            smoothly for everyone. These cookies do not hold any information
+            that could identify you personally. They exist only to give us a
+            general sense of how the platform is performing and where we can
+            make things better for our readers. If you would rather not have
+            cookies stored on your device, you can adjust your browser settings
+            at any time to block or limit them. Just keep in mind that some
+            parts of the website may not display or function in quite the same
+            way if you do. Your browser's help section will have straightforward
+            guidance on how to manage your cookie settings.
           </p>
 
-          <h2 className={styles.childTitle}>8. Contact Us</h2>
+          <h2 className={styles.childTitle}>External Links</h2>
           <p className={styles.description}>
-            If you have questions or concerns about this Privacy Policy, please
-            contact us at:
+            Our articles sometimes include links to other websites, placed there
+            to give our readers somewhere to go if they want to dig deeper into
+            a topic. We have no say in how those external websites operate or
+            what their privacy practices look like, so we recommend having a
+            read through their privacy policies before you interact with them in
+            any meaningful way. We are not responsible for any data collection
+            or privacy-related issues that arise from visiting a third party
+            website linked from our platform, and linking to a website from
+            Tourmingle does not mean we are endorsing it or the way it handles
+            your information.
+          </p>
+
+          <h2 className={styles.childTitle}>Your Rights as a Reader</h2>
+          <p className={styles.description}>
+            Even though Tourmingle holds no personal data about its readers, we
+            feel it is still worth acknowledging your rights as an individual,
+            because they matter regardless of the platform you are on. Based on
+            widely recognised data protection principles, you are entitled to
+            the following:
           </p>
           <p className={styles.description}>
-            Email:{" "}
-            <strong>
-              <a href={`mailto:${primarySiteEmail}`}>{primarySiteEmail}</a>
-            </strong>
-            <br />
+            Right to Access: You have the right to find out what information is
+            being held about you. Since Tourmingle collects nothing from its
+            users, there is simply nothing on file.
+          </p>
+          <p className={styles.description}>
+            Right to Rectification: You have the right to have any incorrect
+            personal details corrected. Since we hold no personal data at all,
+            this right is automatically honoured on our platform.
+          </p>
+          <p className={styles.description}>
+            Right to Restriction of Processing: You have the right to limit how
+            your personal data is used. Since we process no personal data
+            whatsoever, this right is fully respected without you needing to do
+            anything.
+          </p>
+          <p className={styles.description}>
+            Right to Object: You have the right to object to how your personal
+            data is being handled. As Tourmingle does not handle any personal
+            data, this right is upheld completely at all times.
+          </p>
+          <p className={styles.description}>
+            Right to Data Portability: You have the right to receive your
+            personal data in a usable format. Since we hold nothing about you,
+            there is nothing to hand over.
+          </p>
+          <h2 className={styles.childTitle}>Changes to Privacy Policy</h2>
+          <p className={styles.description}>
+            We may revisit and update this Privacy Policy from time to time as
+            circumstances change. Any updates will take effect on our platform
+            the moment they are published. We recommend checking back on this
+            page occasionally to stay on top of any changes. If something
+            significant shifts, we will flag it clearly on the website. If you
+            ever have a question about anything in this document, please reach
+            out to us at <Link href="mailto:info@tourmingle.com">{primarySiteEmail}</Link>, and we will make sure your concern
+            is addressed promptly.
           </p>
         </div>
       </div>
