@@ -20,39 +20,31 @@ const AboutUsSection = () => {
         <div className={styles.contentSection}>
           <h1 className={styles.title}>About Us</h1>
           <p className={styles.description}>
-            Welcome to {siteName}, your one-stop destination for seamless travel
-            planning and unforgettable journeys. We are a comprehensive travel
-            platform dedicated to helping travelers explore the world with ease
-            through flight bookings, hotel reservations, sightseeing
-            attractions, and expert travel guides.
+            Tourmingle came to life because we felt the internet was running low
+            on genuine travel writing. Not the kind that reads like a brochure,
+            but the kind that makes you stop scrolling and actually picture
+            yourself somewhere. That is what we are here for.
           </p>
           <p className={styles.description}>
-            At {siteName}, we believe travel should be simple, affordable, and
-            enriching. Our platform allows you to compare and book flights at
-            the best prices, choose from a wide range of hotels and
-            accommodations, and discover top tourist attractions and experiences
-            across popular destinations worldwide. Whether you’re planning a
-            quick weekend getaway, a business trip, or a long vacation, we’ve
-            got you covered.
+            We are a group of people who love travel deeply, and we write about
+            it just as deeply. Some of us have spent months living out of a
+            single backpack. Others plan every trip down to the last detail.
+            What we all share is a genuine curiosity about the world and a
+            belief that good writing can bring a place to life before you ever
+            set foot in it.
           </p>
           <p className={styles.description}>
-            What sets us apart is our focus on trusted travel information and
-            local guidance. We provide detailed destination guides, travel tips,
-            and curated recommendations to help you make informed decisions and
-            experience each place like a local. From must-see landmarks to
-            hidden gems, our guides are designed to enhance your travel
-            experience.
+            Tourmingle is not a booking platform. We do not sell anything. There
+            are no sign up pages waiting for you, no membership walls blocking
+            our content, and no forms asking for your details. You land on our
+            website, you read, and you leave feeling like you have already been
+            somewhere. That is the entire experience we are trying to create.
           </p>
           <p className={styles.description}>
-            We are committed to delivering a secure, user-friendly, and reliable
-            booking experience, supported by transparent pricing and
-            customer-centric services. Our goal is to make travel planning
-            stress-free so you can focus on creating memories.
-          </p>
-          <p className={styles.description}>
-            Start your journey with {siteName} and discover smarter ways to book
-            flights, find the perfect stay, explore attractions, and travel with
-            confidence.
+            Every article we publish goes through real thought and real effort.
+            We are not here to churn out content. We are here to write things
+            worth reading, about places worth visiting, for people who actually
+            care about travel.
           </p>
         </div>
       </div>
