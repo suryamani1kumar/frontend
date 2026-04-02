@@ -23,7 +23,7 @@ const continents = [
 ];
 
 export default async function DestinationsPage() {
-  // const des = await getAllDestinations();
+   const des = await getAllDestinations();
   return (
     <div className="container">
       <section className={styles.hero}>
@@ -61,7 +61,7 @@ export default async function DestinationsPage() {
 
       <section className={styles.recent}>
         <h2>Recent Destinations</h2>
-        {/* <div className={styles.recentList}>
+         <div className={styles.recentList}>
           {des.destinations.map((item) => (
             <Link
               href={`/destinations/${item.country.slug}/${item.city.slug}/${item.slug.trim()}`}
@@ -84,7 +84,7 @@ export default async function DestinationsPage() {
               </article>
             </Link>
           ))}
-        </div> */}
+        </div> 
       </section>
     </div>
   );
