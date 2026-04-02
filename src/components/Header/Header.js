@@ -13,7 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { SearchEnable } from "@/redux/reducers/moblieSearchSlice";
 import { NavBarItems } from "@/utils/constants";
 import { usePathname } from "next/navigation";
-import { axiosInstance } from "@/service/axiosInstance";
 import { LuSquareMenu } from "react-icons/lu";
 
 const Header = () => {
@@ -23,8 +22,6 @@ const Header = () => {
   const device = useDeviceType();
   const dispatch = useDispatch();
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [continent, setContinent] = useState([]);
-  const [country, setCountry] = useState([]);
   const toggleDrawerOn = () => {
     setOpenDrawer(true);
   };
@@ -35,15 +32,6 @@ const Header = () => {
   useEffect(() => {
     toggleDrawerOff();
   }, [pathname]);
-
-  useEffect(() => {
-    axiosInstance
-      .get("getLocationsByType?type=continent")
-      .then((res) => setContinent(res.data.locations));
-    axiosInstance
-      .get("getLocationsByType?type=country")
-      .then((res) => setCountry(res.data.locations));
-  }, []);
 
   return (
     <header
@@ -67,39 +55,7 @@ const Header = () => {
           <ul className={styles?.desktop_menu_item}>
             {NavBarItems.map((item) => (
               <Link href={item?.link} key={item.id}>
-                {item?.link === "/destinations" ? (
-                  <li
-                    className={styles.menuItem}
-                  >
-                    {item?.name}
-                    <ul className={styles.submenu}>
-                      {continent.map((conn) => (
-                        <Link
-                          href={`/destinations/${conn.slug.trim()}`}
-                          key={conn.name}
-                        >
-                          <li className={styles.submenuItem}>
-                            {conn.name}
-                            <ul className={styles.submenuInner}>
-                              {country
-                                .filter((item) => item.parent === conn._id)
-                                .map((country) => (
-                                  <Link
-                                    key={country.name}
-                                    href={`/destinations/${conn.slug.trim()}/${country.slug.trim()}`}
-                                  >
-                                    <li>{country.name}</li>
-                                  </Link>
-                                ))}
-                            </ul>
-                          </li>
-                        </Link>
-                      ))}
-                    </ul>
-                  </li>
-                ) : (
-                  <li>{item?.name}</li>
-                )}
+                <li>{item?.name}</li>
               </Link>
             ))}
           </ul>
