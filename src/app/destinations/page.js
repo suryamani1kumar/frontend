@@ -23,7 +23,7 @@ const continents = [
 ];
 
 export default async function DestinationsPage() {
-   const des = await getAllDestinations();
+   // const des = await getAllDestinations();
   return (
     <div className="container">
       <section className={styles.hero}>
@@ -59,33 +59,33 @@ export default async function DestinationsPage() {
         ))}
       </section>
 
-      <section className={styles.recent}>
-        <h2>Recent Destinations</h2>
-         <div className={styles.recentList}>
-          {des.destinations.map((item) => (
-            <Link
-              href={`/destinations/${item.country.slug}/${item.city.slug}/${item.slug.trim()}`}
-              key={item.name}
-            >
-              <article className={styles.recentCard}>
-                {console.log("item", item.city.slug)}
+      // <section className={styles.recent}>
+      //   <h2>Recent Destinations</h2>
+      //    <div className={styles.recentList}>
+      //     {des.destinations.map((item) => (
+      //       <Link
+      //         href={`/destinations/${item.country.slug}/${item.city.slug}/${item.slug.trim()}`}
+      //         key={item.name}
+      //       >
+      //         <article className={styles.recentCard}>
+      //           {console.log("item", item.city.slug)}
 
-                <Image
-                  src={item.image || "/destination-img/europe.webp"}
-                  alt={item.heading}
-                  width={0}
-                  height={0}
-                  className={styles.recentImage}
-                />
-                <div className={styles.recentContent}>
-                  <h3>{item.heading}</h3>
-                  <p>{item.smallDescription}</p>
-                </div>
-              </article>
-            </Link>
-          ))}
-        </div> 
-      </section>
+      //           <Image
+      //             src={item.image || "/destination-img/europe.webp"}
+      //             alt={item.heading}
+      //             width={0}
+      //             height={0}
+      //             className={styles.recentImage}
+      //           />
+      //           <div className={styles.recentContent}>
+      //             <h3>{item.heading}</h3>
+      //             <p>{item.smallDescription}</p>
+      //           </div>
+      //         </article>
+      //       </Link>
+      //     ))}
+      //   </div> 
+      // </section>
     </div>
   );
 }
